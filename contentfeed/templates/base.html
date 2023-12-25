@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <title>Site Title </title>
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}" />
+    <title>Game Blog Name</title>
   </head>
   <body>
-    <main class="container">
-      <h1>Base Title</h1>
+    <div id="base" class="container">
+        <!-- Title -->
+        <h1>Game Blog Name</h1>
+        <!-- Navigation -->
+        <div id="nav" class="row">
+          <p><a>Home</a>  /  <a>About</a>  /  <a>Publications</a></p>
+        </div>
+        <!-- Content -->
         {% block content %}
         {% endblock %}
-    </main>
+    </div>
   </body>
 </html>

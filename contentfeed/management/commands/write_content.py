@@ -1,4 +1,4 @@
-from sys import exception
+from sys import exception, stderr
 from typing import Any
 from django.core.management.base import BaseCommand, CommandError, CommandParser
 from datetime import datetime
@@ -18,6 +18,7 @@ class Command(BaseCommand):
         idatepub = options["item_datepub"]
         icreate = datetime.now()
         isource = options["item_source"]
+        sname = Publications.objects.get(pub_id=isource).pub_name
 
         try:
             newitem = ContentItem(
@@ -28,5 +29,8 @@ class Command(BaseCommand):
                 item_source = Publications.objects.get(pub_id=isource),
             )
             newitem.save()
-        except:
-            self.stdout.write("Item not created: "+ititle)
+        except Exception as e:
+            if str(e) != 'UNIQUE constraint failed: content_item.item_url':
+                self.stderr.write(str(e) + " "+ititle +"("+sname+")")
+            else:
+                pass
