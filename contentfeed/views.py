@@ -1,6 +1,8 @@
 from datetime import date, timedelta
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
-from contentfeed.models import ContentItem, Votes
+from contentfeed.forms import NewContactForm, NewSourceForm
+from contentfeed.models import ContentItem, Publications, Votes
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 
 # -- -- -- -- -- -- PAGE RENDERERS -- -- -- -- -- -- -- #
@@ -8,22 +10,13 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 # About Page
 
 def about(request):
-    # sform = NewSourceForm(request.POST or None )
-    # cform = NewContactForm(request.POST or None )
-    # # New Source Form
-    # if sform.is_valid():
-    #     sform.save()
-    #     return HttpResponseRedirect("/about")
-    # else:
-    #     pass
-    # # New Contact Form 
-    # if cform.is_valid():
-    #     cform.save()
-    #     return HttpResponseRedirect("/about")
-    # else:
-    #     pass 
-    #return render(request,'about.html',context={"NewSourceRequest": sform,"NewContactRequest": cform})
-    return render(request, 'about.html')
+    cform = NewContactForm(request.POST or None )
+    if cform.is_valid():
+        cform.save()
+        return HttpResponseRedirect("/about")
+    else:
+        pass 
+    return render(request, 'about.html', context={"NewContactRequest": cform})
 
 # Home Page i.e Content Feed
 def ContentFeed(request,t_view):
@@ -60,7 +53,16 @@ def ContentFeed(request,t_view):
 
 # Publications Page
 def publications(request):
-    return render(request, 'publications.html')
+    # Publication Query
+    pub_query = Publications.objects.filter(pub_hidden=False)
+    # User Form
+    sform = NewSourceForm(request.POST or None )
+    if sform.is_valid():
+        sform.save()
+        return HttpResponseRedirect("/publications")
+    else:
+        pass
+    return render(request, 'publications.html',context={"NewSourceRequest": sform,"publications":pub_query})
 
 # -- -- -- -- -- -- PAGE FUNCTIONS -- -- -- -- -- -- -- #
 

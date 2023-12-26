@@ -27,8 +27,8 @@ class Publications(models.Model):
     pub_url = models.URLField(blank=False,null=False, help_text="URL of the publication, i.e the top level domain", verbose_name="Publication URL")#convert to ip address
     pub_feedurl = models.URLField(blank=False,null=False,help_text="URL of the feed, i.e rss", verbose_name="Publication Feed URL")
     pub_feedtype = models.ForeignKey(SourceType,on_delete=models.RESTRICT,null=True,help_text="The type of feed it is for automation", verbose_name="Feed Type")
-    contentsourcedescription = models.CharField(max_length=2000, blank=False,null=False, help_text="Description of the publication, used in the sources page", verbose_name="Publication Description")#change to bigger text? 
-    contentsourcehidden = models.BooleanField(default=False, help_text="A flag to determine whether this item should be hidden from the site", verbose_name="Publication Hidden")
+    pub_description = models.CharField(max_length=2000, blank=False,null=False, help_text="Description of the publication, used in the sources page", verbose_name="Publication Description")#change to bigger text? 
+    pub_hidden = models.BooleanField(default=False, help_text="A flag to determine whether this item should be hidden from the site", verbose_name="Publication Hidden")
     # Metadata
     class Meta:
         db_table = "publications"

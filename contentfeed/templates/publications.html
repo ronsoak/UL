@@ -1,4 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>Publications</h2>
+<div id="normal" class="row">
+    <h1>Publications</h1>
+</div>
+<div id="normal" class="row">
+    <ul>
+    {% for p in publications %}
+    <li><b>{{p.pub_name}}</b>: {{p.pub_description}}</li>
+    {% empty %}
+    <li>No Publications to display, possible query error.</li>
+    {% endfor %} 
+    </ul>
+</div>
+<!-- Publication Request -->
+<div id="formform" class="row">
+    <div id="normal" class="column">
+        <h2>Request to add your publication</h2>
+        <p>Please review the below rules before submitting your site for review.</p>
+        <p>If you have any questions or concerns please reach out using the form on the <a href="/About">About Page</a></p>
+        <br>
+        <h3>Guidelines for submission</h3>
+        <ul>
+            <li>Your site needs to have an RSS feed, I'll be working on other methods of acquiring data in the future but at the moment its RSS only.</li>
+            <li>Your site needs to be contain a decent amount of content about video games, game development, or the video game industry.</li>
+            <li>While some paywalling is acceptable, i.e Substack, there also needs to be freely-available content.</li>
+            <li>The clear majority of your content needs to be editorial, if every post is the 'latest' news or a wall of reviews, it's not the brand of content I'm looking to highlight.</li>
+            <li>While we have no problem with your site having an infrequent posting schedule, in order to review your site we would like to see at least one to two articles posted in good faith in the past twelve months.</li>
+            <li>The review of your site will not be undertaken in any set timeframe.</li>
+            <li>We reserve the right to reject your site as a new source based on grounds not listed above, we'll be in contact with you about that process and explain our reasoning if I have concerns.</li>
+          </ul>
+    </div>
+    <div id="formform" class="column">
+        <form method="POST">
+            {% csrf_token %}
+            {{ NewSourceRequest }}
+            <br>
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+</div>
+
+
 {% endblock %}

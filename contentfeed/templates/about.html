@@ -1,4 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>About</h2>
+<!-- Main Blurb -->
+<div id="normal" class="row">
+    <h1>About</h1>
+</div>
+<div id="normal" class="row">
+    <p>Dear Reader</p>
+    <p>Dialog Tree is a site dedicated to elevating those who write about video games, the games industry, and game development. </p>
+    <p>Over the past few years we’ve seen a systemic undervaluing in editorial content. </p>
+    <p>Many of the industries outlets have been shuttered whilst those that remain, only remain in business by creating mass-produced SEO friendly content. </p>
+    <p>I’ve watched as many of my favourite writers have lost their jobs, or have been pushed into non-writing roles just to stay in the industry they love.</p>
+    <p>However, the editorial content is still being made, it’s just not coming from large corporate owned sites. Many of our industries best writers now have blogs, patreons, and substack’s. Some write for free, whilst others need crowd funding to pay the bills. </p>
+    <p>Meanwhile, up-and-coming writers no longer have a pathway into a viable career. These writers are left either penning their own blog on the side just to keep their passion going, or submitting their work to volunteer driven sites.</p>
+    <p>The problem surrounding all of these amazing writers is, discovery. Alongside the crash of games writing, is also the crash of the traditional social media channels that used to be a reliable driver for discovering great pieces of writing. </p>
+    <p>I made dialog-tree so that I can help these writers reach more readers. </p>
+    <p>I want those who rely on crowdfunding to be given the opportunity to prove to a new audience why their work is worth the small amount of money that they are asking for. </p>
+    <p>I want more people to be able to read what our greatest writers have to say as they often are key drivers in shaping and improving the culture and education of our industry.</p>
+    <p>And lastly I want those up-and-coming writers to be able to get a chance to show off their work to a bigger audience, hopefully enabling them to grow their writing into whatever direction helps them meet their goals. </p>
+    <p>This site is my way of giving back to the community of writers whose words have moved me, educated me, and delighted me over the past few years, and hopefully many more years to come.</p>
+    <p>- Alex</p>
+</div>
+<!-- Credit -->
+<div id="normal" class="row">
+    <h2>Find more of my work</h2>
+    <P>Dialog-Tree is just one of the many things I put out into the universe for people to consume. I'm a writer, an artist, a hobbyist game developer, and I also do freelance IT work for clients.</P>
+    <P>If you want to see my other work, follow me on a social media platform, or even just buy me a coffee, you can do so via my <a href="https://linktr.ee/antranaut" target="_blank">LinkTree</a>.</P>
+</div>
+<!-- Disclaimer -->
+<div id="normal" class="row">
+    <h2>Disclaimer & General Rules</h2>
+    <ul>
+        <li>Dialog-Tree takes no responsibility for the content of the work that is linked here.</li>
+        <li>Dialog-Tree will periodoically review a sites content for appropriateness, sites that no longer meet the ethos of the site may be removed.</li>
+        <li>Due to the nature of how articles are surfaced here, we are unable to review the content of the articles, and from time to time, especially in the case of a personal blog or a mixed media site, an article may not be thematically appropriate, for example a lot of Gaming sites also write about tech and pop culture.</li>
+        <li>Potential new publications may request that they are added to this sites feed using the form on the <a href="/Publications">Publications</a> page, submissions will be reviewed periodoically and if found to be appropriate, accepted.</li>
+        <li>Content is loaded in using RSS, changes to RSS feeds may result in articles not being loaded to the site and we will attempt to resolve those issues, but with no promises of a full resolution.</li>
+        <li>Due to the aforemention way of loading information (RSS), changes to the title of an article post loading are not possible, and while we have systematic ways of preventing duplication, it cannot always be avoided.</li>
+        <li>Dialog-Tree is a passion project and so not all requests for new features will be entertained and regular updates are not promised.</li>
+      </ul>
+</div>
+<!-- Pub request -->
+<div id="normal" class="row">
+    <h2>How to get your site added</h2>
+    <P>You can make a request to have your site added to Dialog-Tree over on the <a href="/publications" target="_blank">Publications page</a></P>
+    <P>Please ensure you read the rules before making a submission, and reach out if you have any questions.</P>
+    <P>I'll try and evaluate new requests in a timely manner.</P>
+</div>
+<!-- Contact Form -->
+<div id="formform" class="row">
+    <div id="normal" class="column">
+        <h2>Contact Me</h2>
+        <p>If you want to get in contact about any questions, concerns, or want to share some good vibes, please fill in the form below.</p>
+    </div>
+    <div id="formform" class="column">
+        <form method="POST">
+          {% csrf_token %}
+          {{ NewContactRequest }}
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+</div>
+
 {% endblock %}
