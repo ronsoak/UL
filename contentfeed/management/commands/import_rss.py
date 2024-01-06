@@ -9,7 +9,7 @@ from contentfeed.models import Publications, SourceType
 class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any):
         rssid = SourceType.objects.get(type_name__icontains="RSS").type_id
-        rss_pubs = Publications.objects.filter(pub_feedtype=rssid)
+        rss_pubs = Publications.objects.filter(pub_feedtype=rssid, pub_hidden=False)
         for p in rss_pubs:
             pub_url = p.pub_feedurl
             pub_name = p.pub_name

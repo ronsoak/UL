@@ -4,16 +4,14 @@
 {% with p_multi=page_obj.number|add:"-1"%}
 {% with p_change=plimit|mul:p_multi %}
 <!-- -- Curated Feed -- -->
-<div id="cviews" class="row">
-    <p>Curated</p>
-</div>
-<div id="content" class="row">
+<div id="editorial" class="row">
+    <div id="edtitle" class="column"><p>Editors Pick</p></div>
+    <div id="cmeta" class="column column-90">
 {% for c in curated_items %}
 <div id="citems" class="row">
-    <div id="cnum" class="column"><p>0{{forloop.counter}}</p></div>
     <div id="cmeta" class="column column-90">
         <div id="ctitle" class="row vote-link"><p><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></p></div>
-        <div id="cdesc" class="row"><p><a href="/upvote/{{c.item_id}}">▲ Vote</a>  / {{c.item_datecreated|date:"M-d"}} / {{c.item_source}}</p></div>
+        <div id="cdesc" class="row"><p>{{c.item_source}}</p></div>
     </div>
 </div>
 {% empty %}
@@ -22,16 +20,9 @@
     </div>
 {% endfor %} 
 </div>
-<!-- -- Content Feed -- -->
-<!-- Title Swap -->
-<div id="cviews" class="row">
-    {% if t_flag == 1 %}
-        <p>Trending / <a href="/new">Recent</a></p>
-    {% else %}
-        <p><a href="/">Trending</a> / Recent</p>
-    {% endif %}
+
 </div>
-<!-- Content -->
+<!-- -- Content Feed -- -->
 <div id="content" class="row">
 {% for i in content_items %}
 <div id="citems" class="row">
@@ -48,8 +39,12 @@
     </div>
     <div id="cmeta" class="column column-90">
         <div id="ctitle" class="row"><p><a href="/itemclicked/{{i.item_id}}" target="_blank">{{i.item_title}}</a></p></div>
-        <div id="cdesc" class="row"><p><a href="/upvote/{{i.item_id}}">▲ Vote</a>  | {{i.item_datecreated|date:"M-d"}} | {{i.item_source}}</p></div>
+        <div id="cdesc" class="row">
+            <div id="cdesc-vote" class="column"><p>▲ <a href="upvote/{{i.item_id}}">Vote</a></p></div>
+            <div id="cdesc-source" class="column"><p>{{i.item_source}}</p></div>
+        </div>
     </div>
+
 </div>
 {% empty %}
     <div class="row">
@@ -60,16 +55,16 @@
 <div id="pagination" class="row">
     <div id="pageleft" class="column">
         {% if page_obj.has_previous %}
-        <a href="?page=1">First /</a>
+        <a href="?page=1">First</a>
         <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
         {% endif %}
     </div>
     <div id="pagemid" class="column">
-        Page {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}.
+        {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
     </div>
     <div id="pageright" class="column">
         {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next /</a>
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
         <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
     </div>

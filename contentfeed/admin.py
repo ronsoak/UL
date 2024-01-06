@@ -11,7 +11,7 @@ admin.site.register(Publications)
 ## Content View
 @admin.register(ContentItem)
 class ContentItemAdmin(admin.ModelAdmin):
-    list_display=('item_title','item_votecount','item_curated','item_source','item_datepublished')
+    list_display=('item_title','item_votecount','item_curated','item_source','item_datepublished','item_hidden')
     
     def get_ordering(self, request):
         return ['-item_datepublished']

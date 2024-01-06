@@ -1,126 +1,156 @@
 /* Fonts */
 @font-face {
-  font-family: 'Synonym-Extralight';
-  src: url('../fonts/Synonym-Extralight.woff2') format('woff2'),
-       url('../fonts/Synonym-Extralight.woff') format('woff'),
-       url('../fonts/Synonym-Extralight.ttf') format('truetype');
+  font-family: 'ClashGrotesk-Extralight';
+  src: url('../fonts/ClashGrotesk-Extralight.woff2') format('woff2'),
+       url('../fonts/ClashGrotesk-Extralight.woff') format('woff'),
+       url('../fonts/ClashGrotesk-Extralight.ttf') format('truetype');
        font-weight: 200;
        font-display: swap;
        font-style: normal;
 }
-
 @font-face {
-  font-family: 'Synonym-Light';
-  src: url('../fonts/Synonym-Light.woff2') format('woff2'),
-       url('../fonts/Synonym-Light.woff') format('woff'),
-       url('../fonts/Synonym-Light.ttf') format('truetype');
+  font-family: 'ClashGrotesk-Light';
+  src: url('../fonts/ClashGrotesk-Light.woff2') format('woff2'),
+       url('../fonts/ClashGrotesk-Light.woff') format('woff'),
+       url('../fonts/ClashGrotesk-Light.ttf') format('truetype');
        font-weight: 300;
        font-display: swap;
        font-style: normal;
 }
-
 @font-face {
-  font-family: 'Synonym-Regular';
-  src: url('../fonts/Synonym-Regular.woff2') format('woff2'),
-       url('../fonts/Synonym-Regular.woff') format('woff'),
-       url('../fonts/Synonym-Regular.ttf') format('truetype');
+  font-family: 'ClashGrotesk-Regular';
+  src: url('../fonts/ClashGrotesk-Regular.woff2') format('woff2'),
+       url('../fonts/ClashGrotesk-Regular.woff') format('woff'),
+       url('../fonts/ClashGrotesk-Regular.ttf') format('truetype');
        font-weight: 400;
        font-display: swap;
        font-style: normal;
 }
 
 @font-face {
-  font-family: 'Synonym-Medium';
-  src: url('../fonts/Synonym-Medium.woff2') format('woff2'),
-       url('../fonts/Synonym-Medium.woff') format('woff'),
-       url('../fonts/Synonym-Medium.ttf') format('truetype');
+  font-family: 'ClashGrotesk-Medium';
+  src: url('../fonts/ClashGrotesk-Medium.woff2') format('woff2'),
+       url('../fonts/ClashGrotesk-Medium.woff') format('woff'),
+       url('../fonts/ClashGrotesk-Medium.ttf') format('truetype');
        font-weight: 500;
        font-display: swap;
        font-style: normal;
 }
-
 @font-face {
-  font-family: 'Synonym-Semibold';
-  src: url('../fonts/Synonym-Semibold.woff2') format('woff2'),
-       url('../fonts/Synonym-Semibold.woff') format('woff'),
-       url('../fonts/Synonym-Semibold.ttf') format('truetype');
+  font-family: 'ClashGrotesk-Semibold';
+  src: url('../fonts/ClashGrotesk-Semibold.woff2') format('woff2'),
+       url('../fonts/ClashGrotesk-Semibold.woff') format('woff'),
+       url('../fonts/ClashGrotesk-Semibold.ttf') format('truetype');
        font-weight: 600;
        font-display: swap;
        font-style: normal;
 }
-
 @font-face {
-  font-family: 'Synonym-Bold';
-  src: url('../fonts/Synonym-Bold.woff2') format('woff2'),
-       url('../fonts/Synonym-Bold.woff') format('woff'),
-       url('../fonts/Synonym-Bold.ttf') format('truetype');
+  font-family: 'ClashGrotesk-Bold';
+  src: url('../fonts/ClashGrotesk-Bold.woff2') format('woff2'),
+       url('../fonts/ClashGrotesk-Bold.woff') format('woff'),
+       url('../fonts/ClashGrotesk-Bold.ttf') format('truetype');
        font-weight: 700;
        font-display: swap;
        font-style: normal;
 }
-/* ------------------------------------------------------------------------------------------ */
-/* CSS Variables */
-:root {
-  --link-color: #d90429;
+@font-face {
+  font-family: 'Painter';
+  src: url('../fonts/Painter-LxXg.ttf') format('truetype');
+       font-display: swap;
+       font-style: normal;
 }
-/* ------------------------------------------------------------------------------------------ */
+/* Colors */
+/* 
+- Dark Grey (font): #353a47
+- White: #f5f5f5
+- Dark Red: #da1b2b
+*/
+
 /* Custom Ids */
-/* About Page */
-#base>h1{
-  color: black;
-  font-family: 'Synonym-SemiBold';
-  font-size: 8rem;
-  letter-spacing: 2rem;
-  text-transform:uppercase;
-}
-#nav{
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-}
-#nav>p>a{
-  font-family: 'Synonym-Semibold';
-  font-size: 1.5rem;
-  color: black;
+#title>h1{
+  color: #434853;
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 6.5rem;
   letter-spacing: 0.25rem;
-}
-#nav>p>a:hover{
-  color: #d90429;
-}
-/* Content Page */
-#cviews{
+  text-transform:uppercase;
+  line-height: 1;
   margin-top: 1.5rem;
 }
-#cviews>p{
-  color: black;
-  font-family: 'Synonym-SemiBold';
-  font-size: 3.5rem;
+#title>h1>#titred{
+  color: #da1b2b;
+  font-family: 'ClashGrotesk-Bold';
 }
-#cviews>p>a{
-  color: #d90429;
-  font-family: 'Synonym-Regular';
-  font-size: 3.5rem;
+#nav{
+  margin: 0 0 0 0;
+  flex-direction: row;
 }
+#nav>.column{
+  margin: 0 3rem 0 0;
+  padding: 0;
+  max-width: 10%;
+}
+#nav>.column>p{
+  margin: 0;
+}
+#nav>.column>p>a{
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.55rem;
+  color: #353a47;
+  letter-spacing: 0.1rem;
+  line-height: 0.5;
+  padding: 1rem;
+  text-transform: uppercase;
+  
+}
+#nav>.column>p>a:hover{
+  background-color: #da1b2b;
+  color: #f5f5f5;
+}
+#currpage{
+  font-family: 'ClashGrotesk-Bold' !important;
+  color: #da1b2b;
+}
+/* Content Page */
 #content{
-  border-top: 3px solid black;
-  padding-top: 1rem;
+  margin-top: 2rem;
+}
+#editorial{
+  color: #f5f5f5;
+  flex-direction: row;
+  margin-top: 3rem;
+}
+#edtitle{
+  margin: 0 1rem 0 0;
+  padding: 0.5rem 0;
+  max-width: 4.5rem;
+  background-color: #da1b2b;
+}
+#edtitle>p{
+  margin: 0;
+  writing-mode: vertical-rl;
+  transform:rotate(180deg);
+  font-family: 'ClashGrotesk-Semibold';
+  font-size: 2.8rem;
+  letter-spacing: 0.15rem;
+  padding: 0;
 }
 #citems{
   flex-direction: row;
   margin-bottom: 0.25rem;
-  border-bottom: 1px solid black;
 }
 #cnum{
   padding: 0;
-  max-width: 3rem;
+  max-width: 4.5rem;
   margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 #cnum>p{
-  font-family: 'Synonym-Bold';
+  font-family: 'ClashGrotesk-Bold';
   font-size: 2rem;
-  color: black;
+  color: #353a47;
   line-height: 1;
+  padding-left: 0.5rem;
 }
 #cmeta{
   padding: 0;
@@ -128,102 +158,177 @@
 #ctitle{
   margin: 0;
   line-height: 1;
-  margin-bottom: .5rem;
+  margin-bottom: .25rem;
 }
+#etitle{
+  margin: 0;
+  line-height: 1;
+  margin-bottom: .25rem;
+}
+/* Mobile make this smaller */
 #ctitle>p>a{
   line-height: 1;
-  font-family: 'Synonym-Medium';
+  font-family: 'ClashGrotesk-Semibold';
   font-size: 2rem;
-  color: black;
-  letter-spacing: 0.15rem;
+  color: #353a47;
+}
+#etitle>p>a{
+  line-height: 1;
+  font-family: 'ClashGrotesk-Semibold';
+  font-size: 2rem;
+  color: #f5f5f5;
 }
 #ctitle>p>a:hover{
-  color: #d90429;
+  color: #da1b2b;
+}
+#etitle>p>a:hover{
+  color: #353a47;
 }
 #cdesc{
   margin: 0;
+  flex-direction: row;
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.5rem;
+  color: #353a47;
+  letter-spacing: 0.03rem;
 }
-#cdesc>p{
-  line-height: 1;
-  font-family: 'Synonym-Medium';
-  font-size: 1.25rem;
-  color: black;
-  letter-spacing: 0.1rem;
+#cdesc-vote{
+ max-width: 10rem ;
 }
-#cdesc>p>a{
-  line-height: 1;
-  font-family: 'Synonym-Medium';
-  letter-spacing: 0.1rem;
-  color: #d90429;
+#cdesc-vote>p{
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.5rem;
+  color: #da1b2b;
+  letter-spacing: 0.03rem;
+  margin: 0;
 }
-#cdesc>p>a:hover{
-  color: black;
+#cdesc-vote>p:hover{
+  text-decoration: none;
+}
+#cdesc-vote>p>a{
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.5rem;
+  color: #353a47;
+  letter-spacing: 0.03rem;
+}
+#cdesc-vote>p>a:hover{
+  color: #da1b2b;
+}
+#cdesc-vote>p>a:visited{
+color: #da1b2b;
+text-decoration: none;
 }
 #pagination{
-  margin: 0;
+  margin: 1rem 0 0 0;
   flex-direction: row;
-  text-align: center;
-  font-family: 'Synonym-Medium';
-  color: black;
+  font-family: 'ClashGrotesk-Semibold';
+  background-color: #da1b2b;
+  color: #f5f5f5;
+  padding: 0.5rem 1rem;
+}
+#pageleft{
+  text-align: left;
 }
 #pageleft>a{
-  color: black;
+  color: #f5f5f5;
+  margin-right: 2rem;
 }
 #pageleft>a:hover{
-  color: #d90429;
+  color: #353a47;
+}
+#pagemid{
+  text-align: center;
+}
+#pageright{
+  text-align: right;
 }
 #pageright>a{
-  color: black;
+  margin-right: 2rem;
+  color: #f5f5f5;
 }
 #pageright>a:hover{
-  color: #d90429;
+  color: #353a47;
 }
 /* About & Publications Page */
 #normal{
-  margin: 0;
+  margin: 1.5rem 0 0 0;
   padding: 0;
-  border-bottom: 1px solid black;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  max-width: 80%;
+}
+#norm-grid{
+  flex-direction: row;
+  max-width: 80%;
+  margin-bottom: 1rem;
+}
+#norm-grid>p{
+  color: #353a47;
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  margin: 0;
+}
+#norm-point{
+  padding: 0;
+  max-width: 1rem;
+}
+#norm-point>p{
+  color: #353a47;
+  font-family: 'ClashGrotesk-Medium';
+  letter-spacing: 0.05rem;
+  margin: 0;
+  line-height: 1.2;
+}
+#norm-item>p{
+  color: #353a47;
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  margin: 0;
+  line-height: 1.2;
 }
 #normal>h1{
-  color: black;
-  font-family: 'Synonym-SemiBold';
+  color: #353a47;
+  font-family: 'ClashGrotesk-Bold';
   font-size: 3.5rem;
-  padding: 0;
-  margin: 0;
+  letter-spacing: 0.2rem;
+  margin: 2rem 0 0 0;
 }
 #normal>h2{
-  color: black;
-  font-family: 'Synonym-Medium';
-  font-size: 2.5rem;
+  color: #353a47;
+  font-family: 'ClashGrotesk-Bold';
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  margin: 0 0 1rem 0;
 }
 #normal>h3{
-  color: black;
-  font-family: 'Synonym-Medium';
-  font-size: 2rem;
+  color: #353a47;
+  font-family: 'ClashGrotesk-Semibold';
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  margin: 0 0 1rem 0;
 }
-#normal>ul{
-  margin: 0;
-}
-#normal>p,li{
-  color: black;
-  font-family: 'Synonym-Regular';
+#normal>p{
+  color: #353a47;
+  font-family: 'ClashGrotesk-Medium';
   font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  margin: 0;
+  line-height: 1.2;
 }
 #normal>p>a{
-  color: #d90429;
+  color: #da1b2b;
 }
-#normal>ul>li>a{
-  color: #d90429;
+#normal>p>a:hover{
+  background-color: #da1b2b;
+  color: #f5f5f5;
 }
 #formform{
-  flex-direction: row;
   margin-top: 2rem;
+  max-width: 80%;
 }
 #formform>form>label{
-  color: black;
-  font-family: 'Synonym-Regular';
+  color: #353a47;
+  font-family: 'ClashGrotesk-Medium';
   font-size: 1.5rem;
   margin-top: 0.5rem;
 }
@@ -231,12 +336,46 @@
   margin: 0;
 }
 #formform>form>.helptext{
-  color: black;
-  font-family: 'Synonym-Regular';
-  font-size: 1rem;
+  color: #353a47;
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.25rem;
 }
 #formform>form>textarea{
   margin: 0;
+}
+#pubgrid{
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: stretch;
+  max-width: 80%;
+}
+#pubcol{
+  padding: 0 2rem 0 0;
+}
+#pubitem{
+  flex-direction:row;
+  flex-wrap: nowrap;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  border-top: 2px solid #353a47;
+}
+#puptitle{
+  color: #353a47;
+  font-family: 'ClashGrotesk-Semibold';
+  font-size: 1.7rem;
+  line-height: 0.95;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 0.5rem 0 0;
+  margin: 0;
+}
+#pubdesc{
+  color: #353a47;
+  font-family: 'ClashGrotesk-Medium';
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0.5rem 0 0 0;
 }
 /* ------------------------------------------------------------------------------------------ */
 /* Miligram Template */
@@ -253,11 +392,12 @@ html {
 
 body {
   color: #606c76;
-  font-family: 'Synonym-Regular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'ClashGrotesk-Regular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.6em;
   font-weight: 300;
   letter-spacing: .01em;
   line-height: 1.6;
+  background-color: #f5f5f5;
 }
 
 blockquote {
@@ -276,10 +416,10 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  background-color: #d90429;
+  background-color: #da1b2b;
   border: 0.1rem solid #606c76;
   border-radius: .4rem;
-  color: #fff;
+  color: #f5f5f5;
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
@@ -305,7 +445,7 @@ input[type='submit']:focus,
 input[type='submit']:hover {
   background-color: #606c76;
   border-color: #606c76;
-  color: #fff;
+  color: #f5f5f5;
   outline: 0;
 }
 
