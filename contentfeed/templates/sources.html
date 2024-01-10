@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="normal" class="row">
-    <h1>Publications</h1>
+    <H1>Sources</H1>
 </div>
 <div id="pubgrid" class="row">
     {% for p in publications %}
-    <div id="pubcol" class="column column-50">
+    <div id="pubcol" class="column">
         <div id="pubitem" class="row">
             <div id="puptitle" class="column column-40">{{p.pub_name}}</div>
             <div id="pubdesc" class="column">{{p.pub_description}}</div>
@@ -17,7 +17,7 @@
 </div>
 <!-- Publication Request -->
 <div id="normal" class="row">
-    <h2>Request to add your publication</h2>
+    <H3>Request to add your Site</H3>
 </div>
 <div id="norm-grid" class="row">
     <div id="norm-point" class="column"><p>-</p></div>
@@ -48,6 +48,11 @@
     <div id="norm-item" class="column"><p>We reserve the right to reject your site as a new source based on grounds not listed above, we'll be in contact with you about that process and explain our reasoning if I have concerns.</p></div>
 </div>
 <div id="formform" class="column">
+    {% if fvalid == 1 %}
+        <p>Form Submitted Successfully</p>
+    {% elif fvalid == 2 %}
+        <p>Form not submitted, review form and try again.</p>
+    {% endif %}
     <form method="POST">
         {% csrf_token %}
         {{ NewSourceRequest }}

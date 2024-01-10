@@ -84,8 +84,8 @@ class Votes(models.Model):
 class PubRequest(models.Model):
     # Fields
     pubreq_id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this new source request", verbose_name="New Source Id" )
-    pubreq_url = models.URLField(blank=False,help_text="URL of the website top domain", verbose_name="Source URL")
-    pubreq_feed = models.URLField(blank=False,help_text="URL of the websites Feed, i.e RSS", verbose_name="Source Feed URL")
+    pubreq_url = models.CharField(blank=False,max_length=2000,help_text="URL of the website top domain", verbose_name="Source URL")
+    pubreq_feed = models.CharField(blank=False,max_length=2000,help_text="URL of the websites Feed, i.e RSS", verbose_name="Source Feed URL")
     pubreq_name = models.CharField(blank=False,max_length=256,help_text="Name of the person making contact", verbose_name="Contact Name")
     pubreq_email = models.EmailField(blank=False,help_text="The email of the person making contact", verbose_name="Email Address")
     pubreq_notes = models.CharField(blank=True,null=True,max_length=2000,help_text="Notes about the request", verbose_name="Additional Information")
@@ -117,4 +117,4 @@ class ContactRequest(models.Model):
         verbose_name_plural = "Contact Requests"
     # Methods
     def __str__(self):
-        return self.contactname 
+        return self.contact_name 

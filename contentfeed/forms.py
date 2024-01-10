@@ -1,5 +1,5 @@
 from django.forms import ModelForm, Textarea
-from contentfeed.models import PubRequest, ContactRequest
+from contentfeed.models import PubRequest, ContactRequest, ContentItem
 from django.utils.translation import gettext_lazy as _
 
 class NewSourceForm(ModelForm):

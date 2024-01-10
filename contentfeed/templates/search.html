@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Search Bar -->
+<div id="normal" class="row">
+    <H2>Search</H2>
+    <p>Please enter your search terms below and it will look for articles that match those terms.</p>
+</div>
+<div id="formform" class="row">
+    <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %} 
+        <input type="text" name="Article Name">
+        <input type="submit" name="submit" value="Search">
+    </form>
+</div>
+<!-- Search Results -->
+<div id="normal" class="row">
+    <H2>Results</H2>
+</div>
+<br>
+{% for r in results %}
+<div id="norm-grid" class="row">
+    <div id="norm-point" class="column"><p>-</p></div>
+    <div id="norm-item" class="column"><p><a href="/itemclicked/{{r.item_id}}" target="_blank">{{r.item_title}}</a> ({{r.item_source}})</p></div>
+</div>
+{% empty %}
+<div id="normal" class="row">
+    <P>No Search Results</P>
+</div>
+{% endfor %} 
+{% endblock %}

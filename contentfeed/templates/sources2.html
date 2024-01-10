@@ -1,0 +1,191 @@
+{% extends "standard.html" %} {% block content %}
+<div class="divider"></div>
+<div class="container grid-xl">
+  <!--  Site List-->
+  <h2>Sources</h2>
+  <div class="columns">
+    {% for p in publications %}
+    <div class="column col-md-auto col-4">
+        <div class="columns mr-2" id="bord-t">
+            <div class="column col-6"><h4>{{p.pub_name}}</h4></div>
+            <div class="column col-6"><p>{{p.pub_description}}</p></div>
+          </div>
+    </div>
+    {% empty %}
+    <div class="columns">
+        <div class="column col-6"><h4>Error</h4></div>
+        <div class="column col-6"><p>Query has not returned any publication</p></div>
+      </div>
+    {% endfor %} 
+  </div>
+
+  <!-- Rules -->
+  <div class="pt-2"><h3>Request to add your Site</h3></div>
+  <div class="tile">
+    <div class="tile-icon">
+      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    </div>
+    <div class="tile-content">
+      <p>
+        Your site needs to have an RSS feed, I'll be working on other methods of
+        acquiring data in the future but at the moment its RSS only.
+      </p>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-icon">
+      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    </div>
+    <div class="tile-content">
+      <p>
+        Your site needs to be contain a decent amount of content about video
+        games, game development, or the video game industry.
+      </p>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-icon">
+      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    </div>
+    <div class="tile-content">
+      <p>
+        While some paywalling is acceptable, i.e Substack, there also needs to
+        be freely-available content.
+      </p>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-icon">
+      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    </div>
+    <div class="tile-content">
+      <p>
+        The clear majority of your content needs to be editorial, if every post
+        is the 'latest' news or a wall of reviews, it's not the brand of content
+        I'm looking to highlight.
+      </p>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-icon">
+      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    </div>
+    <div class="tile-content">
+      <p>
+        While we have no problem with your site having an infrequent posting
+        schedule, in order to review your site we would like to see at least one
+        to two articles posted in good faith in the past twelve months.
+      </p>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-icon">
+      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    </div>
+    <div class="tile-content">
+      <p>
+        The review of your site will not be undertaken in any set timeframe..
+      </p>
+    </div>
+  </div>
+  <div class="tile">
+    <div class="tile-icon">
+      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    </div>
+    <div class="tile-content">
+      <p>
+        I reserve the right to reject your site as a new source based on grounds
+        not listed above, we'll be in contact with you about that process and
+        explain our reasoning if I have concerns.
+      </p>
+    </div>
+  </div>
+  <div class="container grid-xs float-left p-0">
+  <!-- Form submission Toast -->
+  {% if fvalid == 1 %}
+  <div class="toast toast-success">
+    <button class="btn btn-clear float-right"></button>
+    Form Submitted Successfully
+  </div>
+  {% elif fvalid == 2 %}
+  <div class="toast toast-error">
+    <button class="btn btn-clear float-right"></button>
+    Form not submitted, review your entry and try again.
+  </div>
+  {% endif %}
+  <!-- Form -->
+  <form method="POST">
+    {% csrf_token %} {{ cform.non_field_errors }}
+    <div class="form-group">
+      {{ cform.subject.errors }}
+      <label class="form-label" for="id_pubreq_url">Website URL</label>
+      <input
+        class="form-input"
+        type="url"
+        name="pubreq_url"
+        maxlength="2000"
+        id="id_pubreq_url"
+      />
+      <label class="form-label label-sm">The address of your website.</label>
+    </div>
+    <div class="form-group">
+      {{ cform.subject.errors }}
+      <label class="form-label" for="id_pubreq_feed">Feed URL</label>
+      <input
+        class="form-input"
+        type="url"
+        name="pubreq_feed"
+        maxlength="2000"
+        id="id_pubreq_feed"
+      />
+      <label class="form-label label-sm"
+        >The address of your feed i.e yoursite.com/rss.</label
+      >
+    </div>
+    <div class="form-group">
+      {{ cform.subject.errors }}
+      <label class="form-label" for="id_pubreq_name">Your Name</label>
+      <input
+        class="form-input"
+        type="text"
+        name="pubreq_name"
+        maxlength="200"
+        id="id_pubreq_name"
+      />
+      <label class="form-label label-sm"
+        >How do you want me to address you?.</label
+      >
+    </div>
+    <div class="form-group">
+      {{ cform.subject.errors }}
+      <label class="form-label" for="id_pubreq_email">Your Email</label>
+      <input
+        class="form-input"
+        type="text"
+        name="pubreq_email"
+        maxlength="200"
+        id="id_pubreq_email"
+      />
+      <label class="form-label label-sm"
+        >I'll contact you at this address.</label
+      >
+    </div>
+    <div class="form-group">
+      {{ cform.subject.errors }}
+      <label class="form-label" for="id_pubreq_notes">Notes</label>
+      <textarea
+        class="form-input"
+        name="pubreq_notes"
+        rows="5"
+        maxlength="2000"
+        id="id_pubreq_notes"
+      ></textarea>
+      <label class="form-label label-sm"
+        >Please include any additional information about your request.</label
+      >
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit" />
+  </form>
+</div>
+</div>
+{% endblock %}

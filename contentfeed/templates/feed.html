@@ -5,22 +5,21 @@
 {% with p_change=plimit|mul:p_multi %}
 <!-- -- Curated Feed -- -->
 <div id="editorial" class="row">
-    <div id="edtitle" class="column"><p>Editors Pick</p></div>
+    <div id="edtitle" class="column"><H4>Curated</H4></div>
     <div id="cmeta" class="column column-90">
-{% for c in curated_items %}
-<div id="citems" class="row">
-    <div id="cmeta" class="column column-90">
-        <div id="ctitle" class="row vote-link"><p><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></p></div>
-        <div id="cdesc" class="row"><p>{{c.item_source}}</p></div>
+    {% for c in curated_items %}
+    <div id="citems" class="row">
+        <div id="cmeta" class="column column-90">
+            <div id="ctitle" class="row vote-link"><p><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></p></div>
+            <div id="cdesc" class="row"><p>{{c.item_source}}</p></div>
+        </div>
     </div>
-</div>
-{% empty %}
+    {% empty %}
     <div class="row">
         <p>No objects returned.</p>
     </div>
-{% endfor %} 
-</div>
-
+    {% endfor %} 
+    </div>
 </div>
 <!-- -- Content Feed -- -->
 <div id="content" class="row">
