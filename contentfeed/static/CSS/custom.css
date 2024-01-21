@@ -269,29 +269,11 @@
 }
 
 #title>a>h1 {
-    font-family: "Archivo-Light";
+    font-family: "Archivo-regular";
     color: black;
+    letter-spacing: 0.2rem;
 }
-
 #title>a>h1>span {
     color: #ef233c;
-    font-family: "Archivo-Bold";
-    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    display: inline-block;
-}
-
-#tflip {
-    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    display: inline-block;
-}
-
-#taccent {
-    color: #ef233c;
-    font-family: "Archivo-Bold";
+    margin-right: 0.2rem;
 }

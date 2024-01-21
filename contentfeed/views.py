@@ -59,7 +59,7 @@ def ContentFeed(request,t_view):
     return render(request,'feed.html',context)
 
 # Publications Page
-def sources(request):
+def sites(request):
     # Publication Query
     pub_query = Publications.objects.filter(pub_hidden=False)
     # User Form
@@ -70,10 +70,10 @@ def sources(request):
             sform.save()
             f_valid = 1
             sform = NewSourceForm()
-            return render(request, 'sources.html',context={"NewSourceRequest": sform,"publications":pub_query,"fvalid":f_valid})
+            return render(request, 'sites.html',context={"NewSourceRequest": sform,"publications":pub_query,"fvalid":f_valid})
         else:
             f_valid = 2
-    return render(request, 'sources.html',context={"NewSourceRequest": sform,"publications":pub_query,"fvalid":f_valid})
+    return render(request, 'sites.html',context={"NewSourceRequest": sform,"publications":pub_query,"fvalid":f_valid})
 
 # Search Page
 def search(request):

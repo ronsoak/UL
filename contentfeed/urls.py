@@ -8,7 +8,7 @@ urlpatterns = [
     path('random',views.ContentFeed,{"t_view": 2}, name='random'),
     path('old',views.ContentFeed,{"t_view": 3}, name='oldest'),
     path('about',views.about,name='about'),
-    path('sites',views.sources, name='sites'),
+    path('sites',views.sites, name='sites'),
     path('search',views.search, name='search'),
     #function urls
     path('itemclicked/<item_uid>/',views.ItemClicked,name='itemclicked'),
