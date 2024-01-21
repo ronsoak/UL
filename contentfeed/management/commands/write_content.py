@@ -1,9 +1,7 @@
-from sys import exception, stderr
 from typing import Any
-from django.core.management.base import BaseCommand, CommandError, CommandParser
+from django.core.management.base import BaseCommand, CommandParser
 from datetime import datetime
 from contentfeed.models import ContentItem, Publications
-from contentfeed.views import publications
 
 class Command(BaseCommand):
     def add_arguments(self, parser: CommandParser):

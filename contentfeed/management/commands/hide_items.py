@@ -1,9 +1,5 @@
 from typing import Any
-from django.core.management.base import BaseCommand, CommandError, CommandParser
-from django.core import management
-import feedparser
-from datetime import datetime, date
-from zoneinfo import ZoneInfo
+from django.core.management.base import BaseCommand
 from contentfeed.models import Publications, ContentItem
 
 class Command(BaseCommand):

@@ -1,10 +1,8 @@
 from typing import Any
-from django.core.management.base import BaseCommand, CommandError, CommandParser
-from django.core import management
+from django.core.management.base import BaseCommand
 import feedparser
-from datetime import datetime, date
+from datetime import datetime
 from zoneinfo import ZoneInfo
-from contentfeed.models import Publications, SourceType
 
 class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any):

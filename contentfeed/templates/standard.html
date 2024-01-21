@@ -8,44 +8,63 @@
     <link rel="stylesheet" href="{% static 'CSS/spectre.css' %}" />
     <link rel="stylesheet" href="{% static 'CSS/spectre-icons.css' %}" />
     <link rel="stylesheet" href="{% static 'CSS/spectre-exp.css' %}" />
+    <script src="{% static 'JS/searchToggle.js' %}"></script> 
     <title>Reconnect</title>
     <link rel="stylesheet" href="" />
   </head>
   <!-- Variables -->
   <!-- Gets Page URL -->
   <body>
-    <div class="container">
+    <div class="container grid-lg p-sticky-t bg-white">
       <!-- Title & Nav -->
-      <div class="columns col-gapless pt-2">
-        <div class="column col-6 float-left">
+      <div class="columns pt-2">
+        <div class="column col-2 float-left">
           <div class="dropdown">
             <a
               href="#"
-              class="btn btn-action btn-lg dropdown-toggle"
+              class="btn btn-action btn-lg dropdown-toggle btn-col1"
               tabindex="0"
               ><i class="icon icon-menu"></i
             ></a>
             <ul class="menu">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/about2">About</a></li>
-              <li><a href="/sources2">Sites</a></li>
-              <li><a href="/search2">Search</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/sites">Sites</a></li>
+              <li><a href="/search">Search</a></li>
             </ul>
           </div>
         </div>
-        <div class="column col-6">
-          <div class="btn btn-lg float-right">
-            <a href="/search2"><i class="icon icon-search"></i></a>
-          </div>
+        <div id="title" class="column col-8 text-center">
+            <a href="/"><h1>RECONNECT</h1></a>
+        </div>
+        <div class="column col-2">
+          <button onclick="searchToggle()" class="btn btn-lg btn-action float-right btn-col1"><i class="icon icon-search"></i></button>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="section text-center">
-        <h1>RECONNECT</h1>
-      </div>
     </div>
+    <!-- Search Bar -->
+    <div id="searchbar" class="container grid-lg px-2 pb-2 mb-2">
+        <form action="{% url 'search' %}" method="POST">
+          <div id="sbar" class="input-group">
+            {% csrf_token %}
+            <input
+              class="input-group"
+              type="text"
+              placeholder="Enter keywords here..."
+              name="Article Name"
+            />
+            <button class="btn btn-col1 input-group-btn" type="submit"><i class="icon icon-search"></i></button>
+          </div>
+        </form>
+      </div>
     <!-- Content -->
     {% block content %} {% endblock %}
     <!-- Footer -->
+    <div class="container grid-lg">
+        <div class="columns text-center">
+            <div class="column col-1"></div>
+            <div class="column col-10 text-center linkchange"><p>This site is an <a href="https://linktr.ee/antranaut">Alex Antra</a> product, design by <a href="http://micahtabak.myportfolio.com/">Micah Tabak</a></p></div>
+            <div class="column col-1"></div>
+    </div>
   </body>
 </html>

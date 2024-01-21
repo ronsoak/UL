@@ -1,30 +1,44 @@
-{% extends "base.html" %}
-{% block content %}
-<!-- Search Bar -->
-<div id="normal" class="row">
-    <H2>Search</H2>
-    <p>Please enter your search terms below and it will look for articles that match those terms.</p>
-</div>
-<div id="formform" class="row">
+{% extends "standard.html" %} {% block content %}
+<div class="divider"></div>
+<div class="container grid-lg">
+  <h2>Search</h2>
+  <p>
+    Please enter your search terms below and it will search for articles where
+    the title contains those terms.
+  </p>
+  <!-- Form -->
+  <div class="container px-0 pb-2 mb-2">
     <form action="{% url 'search' %}" method="POST">
-        {% csrf_token %} 
-        <input type="text" name="Article Name">
-        <input type="submit" name="submit" value="Search">
+        <div id="sbar" class="input-group">
+            {% csrf_token %}
+            <input
+              class="input-group"
+              type="text"
+              placeholder="Enter keywords here..."
+              name="Article Name"
+            />
+            <button class="btn btn-col1 input-group-btn" type="submit"><i class="icon icon-search"></i></button>
+          </div>
     </form>
+  </div>
 </div>
 <!-- Search Results -->
-<div id="normal" class="row">
-    <H2>Results</H2>
+<div class="container grid-lg">
+  <h3>Results</h3>
+  {% for r in results %}
+  <div class="tile mt-2">
+    <div class="tile-icon"><i class="icon icon-minus"></i></div>
+    <div class="tile-content">
+      <div class="pb-1">
+        <a href="/itemclicked/{{i.item_id}}" target="_blank"
+          >{{r.item_title}}</a
+        >
+      </div>
+      <div><span class="chip">{{r.item_source}}</span></div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No Results</p>
+  {% endfor %}
 </div>
-<br>
-{% for r in results %}
-<div id="norm-grid" class="row">
-    <div id="norm-point" class="column"><p>-</p></div>
-    <div id="norm-item" class="column"><p><a href="/itemclicked/{{r.item_id}}" target="_blank">{{r.item_title}}</a> ({{r.item_source}})</p></div>
-</div>
-{% empty %}
-<div id="normal" class="row">
-    <P>No Search Results</P>
-</div>
-{% endfor %} 
 {% endblock %}

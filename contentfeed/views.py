@@ -1,5 +1,4 @@
 from datetime import date, timedelta
-from multiprocessing import context
 from sys import stdout
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
@@ -7,7 +6,6 @@ from contentfeed.forms import NewContactForm, NewSourceForm
 from contentfeed.models import ContentItem, Publications, Votes
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.http import HttpResponseRedirect
-from django.contrib import messages
 
 # -- -- -- -- -- -- PAGE RENDERERS -- -- -- -- -- -- -- #
 # About Page
@@ -88,7 +86,6 @@ def search(request):
     return render(request, 'search.html')
 
 # -- -- -- -- -- -- PAGE FUNCTIONS -- -- -- -- -- -- -- #
-
 def ItemClicked(request,item_uid):
     u = ContentItem.objects.get(item_id = item_uid).item_url
     if not request.session.exists(request.session.session_key):
@@ -120,81 +117,3 @@ def VoteForItem(item_uid,session_id):
         c.save()
         new_vote=Votes(item_id=i, session_id = s)
         new_vote.save()
-
-# -- -- -- -- -- -- REDESIGN -- -- -- -- -- -- -- #
-# Home Page i.e Content Feed
-def CFEED(request,t_view):
-    '''Home Page for Website showing Trending and Curated Items'''
-    t = t_view
-    datestart = date.today()
-    dateend = datestart - timedelta (days=90)
-    page = request.GET.get("page")
-    qlimit =  99
-    plimit = 25
-    if t == 1:      # 1 = Newset
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('-item_datepublished')[:qlimit]
-    elif t == 2:    # 2 = Random
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('?')[:qlimit]
-    elif t == 3:    # 3 = Oldest
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('item_datepublished')[:qlimit]
-    else:           # 0 = Trending (Default)
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('-item_votecount','-item_datepublished')[:qlimit]
-    
-    paginator = Paginator(content_query,plimit)
-    curated = ContentItem.objects.filter(item_curated=True,item_hidden=False).order_by('-item_datepublished')[:3] #Curated top 3
-    page_obj = paginator.get_page(page)
-    try:
-        content = paginator.page(page)
-    except PageNotAnInteger:
-        content = paginator.page(1)
-    except EmptyPage:
-        content = paginator.page(paginator.num_pages)
-    context = {
-        "content_items": content,
-        "curated_items" : curated,
-        "page_obj": page_obj,
-        "t_view": t,
-        "plimit": plimit
-    }
-    return render(request,'feed2.html',context)
-
-# About Page
-def about2(request):
-    cform = NewContactForm(request.POST or None )
-    f_valid = 0
-    if request.method == "POST":
-        if cform.is_valid():
-            cform.save()
-            f_valid = 1
-            cform = NewContactForm()
-            return render(request,'about2.html', context={"fvalid":f_valid})
-        else:
-            f_valid = 2 
-    return render(request, 'about2.html', context={"cform": cform, "fvalid":f_valid})
-
-# Publications Page
-def sources2(request):
-    # Publication Query
-    pub_query = Publications.objects.filter(pub_hidden=False)
-    # User Form
-    sform = NewSourceForm(request.POST or None )
-    f_valid = 0
-    if request.method == "POST":
-        if sform.is_valid():
-            sform.save()
-            f_valid = 1
-            sform = NewSourceForm()
-            return render(request, 'sources2.html',context={"NewSourceRequest": sform,"publications":pub_query,"fvalid":f_valid})
-        else:
-            f_valid = 2
-    return render(request, 'sources2.html',context={"sform": sform,"publications":pub_query,"fvalid":f_valid})
-
-# Search Page
-def search2(request):
-    # Search results model 
-    if request.method == "POST":
-        squery = request.POST.get('Article Name', None)
-        if squery:
-            results = ContentItem.objects.filter(item_title__icontains=squery)[:50]
-            return render(request, 'search2.html', {"results":results})
-    return render(request, 'search2.html')

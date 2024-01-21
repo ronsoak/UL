@@ -4,7 +4,7 @@
 /** 1. Change the default font family in all browsers (opinionated). 2. Correct the line height in all browsers. 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
 /* Document ========================================================================== */
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: "Archivo-Regular",sans-serif; /* 1 */
   -webkit-text-size-adjust: 100%; /* 3 */ 
   -ms-text-size-adjust: 100%; /* 3 */
 }
@@ -171,6 +171,7 @@ html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; /* 2 */
+  appearance: button;
 }
 
 /** Remove the inner border and padding in Firefox. */
@@ -227,6 +228,7 @@ textarea {
 /** 1. Correct the odd appearance in Chrome and Safari. 2. Correct the outline style in Safari. */
 [type="search"] {
   -webkit-appearance: textfield; /* 1 */
+  appearance: textfield;
   outline-offset: -2px; /* 2 */
 }
 
@@ -287,15 +289,17 @@ html {
 
 body {
   background: #fff;
-  color: #3b4351;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  /* color: #3b4351; */
+  color:#20292C;
+  font-family: "Archivo-Regular",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: .8rem;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
 
 a {
-  color: #5755d9;
+  /* color: #5755d9; */
+  color:#20292C;
   outline: none;
   text-decoration: none;
 }
@@ -308,12 +312,14 @@ a:focus,
 a:hover,
 a:active,
 a.active {
-  color: #302ecd;
+  /* color: #302ecd; */
+  color: #ef233c;
   text-decoration: underline;
 }
 
 a:visited {
-  color: #807fe2;
+    color:#20292C;
+  /* color: #807fe2; */
 }
 
 h1,
@@ -842,7 +848,8 @@ legend {
   background: #fff;
   background-image: none;
   border: .05rem solid #bcc3ce;
-  border-radius: .1rem;
+  /* border-radius: .1rem; */
+  border-radius: 5rem;
   color: #3b4351;
   display: block;
   font-size: .8rem;
@@ -899,6 +906,7 @@ textarea.form-input,
 textarea.form-input.input-lg,
 textarea.form-input.input-sm {
   height: auto;
+  border-radius: 1rem;
 }
 
 .form-input-hint {
@@ -2389,7 +2397,8 @@ summary.accordion-header::-webkit-details-marker {
 
 .chip {
   align-items: center;
-  background: #eef0f3;
+  /* background: #eef0f3; */
+  background: #E7ECEE;
   border-radius: 5rem;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2695,7 +2704,7 @@ summary.accordion-header::-webkit-details-marker {
 
 .pagination .page-item a:focus,
 .pagination .page-item a:hover {
-  color: #5755d9;
+  color: #ef233c;
 }
 
 .pagination .page-item.disabled a {
@@ -2885,7 +2894,7 @@ summary.accordion-header::-webkit-details-marker {
 
 .tab {
   align-items: center;
-  border-bottom: .05rem solid #dadee4;
+  /* border-bottom: .05rem solid #dadee4; */
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -2910,13 +2919,15 @@ summary.accordion-header::-webkit-details-marker {
 
 .tab .tab-item a:focus,
 .tab .tab-item a:hover {
-  color: #5755d9;
+  color: #ef233c;
+  font-family:"Archivo-Semibold";
 }
 
 .tab .tab-item.active a,
 .tab .tab-item a.active {
-  border-bottom-color: #5755d9;
-  color: #5755d9;
+  border-bottom-color: #ef233c;
+  color: #ef233c;
+  font-family:"Archivo-Semibold";
 }
 
 .tab .tab-item.tab-action {

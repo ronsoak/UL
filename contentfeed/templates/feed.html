@@ -1,73 +1,95 @@
-{% extends "base.html" %}
+{% extends "standard.html" %}
 {% load mathfilters %}
 {% block content %}
 {% with p_multi=page_obj.number|add:"-1"%}
 {% with p_change=plimit|mul:p_multi %}
-<!-- -- Curated Feed -- -->
-<div id="editorial" class="row">
-    <div id="edtitle" class="column"><H4>Curated</H4></div>
-    <div id="cmeta" class="column column-90">
-    {% for c in curated_items %}
-    <div id="citems" class="row">
-        <div id="cmeta" class="column column-90">
-            <div id="ctitle" class="row vote-link"><p><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></p></div>
-            <div id="cdesc" class="row"><p>{{c.item_source}}</p></div>
+    <!-- Editors Pick  -->
+    <div class="container grid-lg">
+    <div id="edpick" class="card">
+        <div class="card-header">
+          <div class="card-title h4">Editors Pick</div>
         </div>
+        <div class="card-body pt-2">
+            {% for c in curated_items %}
+            <div><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></div>
+            <div class="mb-2"><span class="chip">{{c.item_source}}</span></div>
+            {% empty %}
+            <p>No items to display</p>
+            {% endfor %} 
+        </div>
+      </div>
     </div>
+    <!-- Tabs  -->
+    <div class="container grid-lg">
+    <ul class="tab tab-block mt-2">
+        <li class="tab-item">
+          <a href="/" {% if t_view == 0 %} class="active" {% endif %}>Trending</a>
+        </li>
+        <li class="tab-item">
+          <a href="new" {% if t_view == 1 %} class="active" {% endif %}>Newest</a>
+        </li>
+        <li class="tab-item">
+          <a href="/old" {% if t_view == 3 %} class="active" {% endif %}>Oldest</a>
+        </li>
+        <li class="tab-item">
+          <a href="/random" {% if t_view == 2 %} class="active" {% endif %}>Random</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Content Feed -->
+    <div class="container grid-lg">
+    {% for i in content_items %}
+        <div class="tile mt-2">
+            {% if page_obj.number > 1 %}
+            <div class="tile-icon">{{forloop.counter|add:p_change}}</div>
+            {% else %}
+                {% if forloop.counter < 10 %}
+                <div class="tile-icon">0{{forloop.counter}}</div>
+                {% else %}
+                <div class="tile-icon">{{forloop.counter}}</div>
+                {% endif %}
+            {% endif %}
+            <div class="tile-content">
+                <div class="pb-1"><a href="/itemclicked/{{i.item_id}}" target="_blank">{{i.item_title}}</a></div>
+                <div><span id="cvote" class="chip"><a href="upvote/{{i.item_id}}">Vote</a></span><span class="chip">{{i.item_source}}</span></div>
+            </div>
+        </div>
+    <div class="divider"></div>
     {% empty %}
-    <div class="row">
-        <p>No objects returned.</p>
-    </div>
+        <p>No Content to display</p>
     {% endfor %} 
     </div>
-</div>
-<!-- -- Content Feed -- -->
-<div id="content" class="row">
-{% for i in content_items %}
-<div id="citems" class="row">
-    <div id="cnum" class="column">
-    {% if page_obj.number > 1 %}
-        <p>{{ forloop.counter|add:p_change}}</p>
-    {% else %}
-        {% if forloop.counter < 10 %}
-            <p>0{{forloop.counter}}</p>
-        {% else %}
-            <p>{{forloop.counter}}</p>
-        {% endif %}
-    {% endif %}
-    </div>
-    <div id="cmeta" class="column column-90">
-        <div id="ctitle" class="row"><p><a href="/itemclicked/{{i.item_id}}" target="_blank">{{i.item_title}}</a></p></div>
-        <div id="cdesc" class="row">
-            <div id="cdesc-vote" class="column"><p>▲ <a href="upvote/{{i.item_id}}">Vote</a></p></div>
-            <div id="cdesc-source" class="column"><p>{{i.item_source}}</p></div>
-        </div>
-    </div>
-
-</div>
-{% empty %}
-    <div class="row">
-    <p>No objects returned.</p>
-    </div>
-{% endfor %} 
-</div>
-<div id="pagination" class="row">
-    <div id="pageleft" class="column">
+    <!-- Pagination -->
+    <div class="container grid-lg">
+    <ul class="pagination">
         {% if page_obj.has_previous %}
-        <a href="?page=1">First</a>
-        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        <li class="page-item page-prev">
+          <a href="?page={{ page_obj.previous_page_number }}">
+            <div class="page-item-title">Previous</div>
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item page-prev disabled">
+            <a href="#">
+              <div class="page-item-title">Previous</div>
+            </a>
+          </li>
         {% endif %}
-    </div>
-    <div id="pagemid" class="column">
-        {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-    </div>
-    <div id="pageright" class="column">
         {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-    {% endif %}
+        <li class="page-item page-next">
+          <a href="?page={{ page_obj.next_page_number }}">
+            <div class="page-item-title">Next</div>
+          </a>
+        </li>
+      {% else %}
+      <li class="page-item page-next disabled">
+        <a href="#">
+          <div class="page-item-title">Next</div>
+        </a>
+      </li>
+      {% endif %}
+        </ul>
     </div>
-</div>
-{% endwith %}
-{% endwith %}
+    {% endwith %}
+    {% endwith %}
 {% endblock %}
