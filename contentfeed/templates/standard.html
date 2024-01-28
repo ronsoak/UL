@@ -35,17 +35,17 @@
           </div>
         </div>
         <div id="title" class="column col-8 text-center">
-            <a href="/"><h1><span>re</span>connect</h1></a>
+            <a href="/"><img src="{% static 'images/title.png' %}"></a>
         </div>
-        <div class="column col-2">
-          <button onclick="searchToggle()" class="btn btn-lg btn-action float-right btn-col1"><i class="icon icon-search"></i></button>
+        <div class="column col-2 p-relative">
+          <button onclick="searchToggle()" class="btn btn-lg btn-action float-right btn-col1 p-relative"><i id="sbuttS" class="icon icon-search"></i><i id="sbuttX" class="icon icon-arrow-up"></i></button>
         </div>
       </div>
     </div>
     <!-- Search Bar -->
     <div id="searchbar" class="container grid-lg px-2 pb-2 mb-2">
         <form action="{% url 'search' %}" method="POST">
-          <div id="sbar" class="input-group">
+          <div id="sbar" class="input-group px-2">
             {% csrf_token %}
             <input
               class="input-group"
@@ -60,7 +60,7 @@
     <!-- Content -->
     {% block content %} {% endblock %}
     <!-- Footer -->
-    <div class="container grid-lg">
+    <div class="container grid-lg mt-1r">
         <div class="columns text-center">
             <div class="column col-1"></div>
             <div class="column col-10 text-center linkchange"><p>This site is an <a href="https://linktr.ee/antranaut">Alex Antra</a> product, design by <a href="http://micahtabak.myportfolio.com/">Micah Tabak</a></p></div>

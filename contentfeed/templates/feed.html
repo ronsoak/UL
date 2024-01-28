@@ -4,15 +4,15 @@
 {% with p_multi=page_obj.number|add:"-1"%}
 {% with p_change=plimit|mul:p_multi %}
     <!-- Editors Pick  -->
-    <div class="container grid-lg">
+    <div class="container grid-lg p-relative">
     <div id="edpick" class="card">
         <div class="card-header">
-          <div class="card-title h4">Editors Pick</div>
+          <div class="card-title h2">Editors Pick</div>
         </div>
         <div class="card-body pt-2">
             {% for c in curated_items %}
-            <div><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></div>
-            <div class="mb-2"><span class="chip">{{c.item_source}}</span></div>
+            <div id="edlink"><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></div>
+            <div class="mb-2"><span id="edchip" class="chip">{{c.item_source}}</span></div>
             {% empty %}
             <p>No items to display</p>
             {% endfor %} 
@@ -20,8 +20,8 @@
       </div>
     </div>
     <!-- Tabs  -->
-    <div class="container grid-lg">
-    <ul class="tab tab-block mt-2">
+    <div class="container grid-lg pt-2">
+    <ul class="tab tab-block">
         <li class="tab-item">
           <a href="/" {% if t_view == 0 %} class="active" {% endif %}>Trending</a>
         </li>
