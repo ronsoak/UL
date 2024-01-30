@@ -345,7 +345,9 @@
     border-radius: 5rem 0rem 0rem 5rem;
     border: 1px solid #20292C;
     padding-left: 10px;
-    overflow-y: hidden;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-right: 0px !important;
 }
 
 #sbar>button {
