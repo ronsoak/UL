@@ -234,11 +234,19 @@
     color: #f5f5f5;
 }
 
+@media(hover: hover) and (pointer: fine) {
 .btn.btn-col1:focus,
 .btn.btn-col1:hover {
     background: #F45B01;
     border-color: #F45B01;
     color: #E7ECEE;
+}
+}
+.btn.btn-col1:focus,
+.btn.btn-col1:hover {
+    background: #7120fe;
+    border-color: #7120fe;
+    color: #f5f5f5;
 }
 
 .btn.btn-col1:active,
