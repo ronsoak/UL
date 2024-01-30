@@ -5,7 +5,8 @@
   <h2>Sources</h2>
   <div class="columns">
     {% for p in publications %}
-    <div class="column col-md-auto col-4 p-0">
+    <!-- Change col width to 2 cols per line. its too packed with 3 -->
+    <div class="column col-md-auto col-4 p-0"> 
       <div class="columns m-2" id="sitegrid">
         <div class="column col-6 p-0"><h4><a href="{{p.pub_url}}" target="_blank">{{p.pub_name}}</a></h4></div>
         <div class="column col-6"><p>{{p.pub_description}}</p></div>
