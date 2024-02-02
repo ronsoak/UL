@@ -4,14 +4,15 @@
 {% with p_multi=page_obj.number|add:"-1"%}
 {% with p_change=plimit|mul:p_multi %}
     <!-- Editors Pick  -->
-    <div class="container grid-lg p-relative">
+    <div class="container grid-lg p-relative p-0">
     <div id="edpick" class="card">
+        <hr>
         <div class="card-header">
-          <div class="card-title h2">Editors Pick</div>
+          <div class="card-title h1">Editors Pick</div>
         </div>
         <div class="card-body pt-2">
             {% for c in curated_items %}
-            <div id="edlink"><a href="/itemclicked/{{c.item_id}}" target="_blank">{{c.item_title}}</a></div>
+            <div id="edlink"><a href="/itemclicked/{{c.item_id}}" class="vote-link" target="_blank">{{c.item_title}}</a></div>
             <div class="mb-2"><span id="edchip" class="chip">{{c.item_source}}</span></div>
             {% empty %}
             <p>No items to display</p>

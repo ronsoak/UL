@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /blogsite/
+User-agent: GPTBot
+Disallow: /
+Sitemap: https://www.reconnect.quest/sitemap.xml

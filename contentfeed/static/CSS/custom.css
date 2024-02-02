@@ -193,125 +193,125 @@
 /* Green: 01f45b */
 /* BLACK:  000100*/
 /* WHITE: F5F5F5 */
+/*  */
+/*  */
+/* 
+Yellow: FADF33
+Orange: FF9D45
+Charcoal: 353238
+beige: EEE9D7 
+*/
 /* ----- ----- ----- ----- Custom CSS ----- ----- ----- ----- ----- -----  */
 /* about card */
 #atcard{
     border: none !important;
-    background-color: #7120fe;
-    color: #f5f5f5;
-}
-#atcard>.card-body{
-    padding-bottom: 3.5rem;
+    background-color: #353238;
+    color: #FADF33;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: 0;
 }
 #atcard>.card-body>p>a{
-    color: #01f45b ;
-    text-decoration: underline;
-    padding-bottom: 1rem;
-}
-#atcard::after{
-    content: "About Me";
-    font-family: "Archivo-Black";
-    font-size: 4rem;
-    color: #000100;
-    letter-spacing: 0.3rem;
-    opacity: 15%;
-    position: absolute;
-    bottom:-15px;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    overflow: hidden;
+    color: #353238 ;
+    background-color: #FADF33;
+    text-decoration: none;
 }
 
-/* makes background white */
-.bg-white {
-    background: #fff !important;
+/* makes background dark */
+.bg-charcoal {
+    background: #353238 !important;
 }
 
 /* Changes the color of any button to this color */
 .btn.btn-col1 {
-    background: #7120fe;
-    border-color: #7120fe;
-    color: #f5f5f5;
+    background: #FADF33;
+    border-color: #FADF33;
+    color: #353238;
 }
 
-@media(hover: hover) and (pointer: fine) {
 .btn.btn-col1:focus,
 .btn.btn-col1:hover {
-    background: #F45B01;
-    border-color: #F45B01;
-    color: #E7ECEE;
-}
-}
-.btn.btn-col1:focus,
-.btn.btn-col1:hover {
-    background: #7120fe;
-    border-color: #7120fe;
-    color: #f5f5f5;
+    background: #353238;
+    border-color: #FADF33;
+    color: #FADF33;
 }
 
 .btn.btn-col1:active,
 .btn.btn-col1.active {
-    background: #E7ECEE;
-    border-color: #20292C;
-    color: #F45B01;
+    background: #FF9D45;
+    border-color: #FF9D45;
+    color: #353238;
 }
 
 /* Changes the vote chip */
 #cvote{
-    background-color: #F45B01 !important;
+    background-color: #353238 !important;
 }
 #cvote>a {
     font-family: "Archivo-Semibold";
-    color: #f5f5f5 !important;
+    color: #FADF33 !important;
 }
 #cvote>a:visited {
-    color: #6e2901 !important;
+    color: #EEE9D7 !important;
 }
-
+#dropmenu {
+    background-color: #FADF33;
+}
 
 /* Removes the border from the editors pick */
 #edpick {
     border: none !important;
-    background-color: #7120fe;
-    /* border-radius: 1rem; */
-    color: #f5f5f5;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    background-color: #353238;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0;
 }
-#edpick>.card-body{
-    padding-bottom: 3rem !important;
+
+#edpick>.card-header>.card-title{
+    color: #fff;
 }
-#edpick::after{
-    content: "Editors Pick";
-    font-family: "Archivo-Black";
-    font-size: 4rem;
-    color: #000100;
-    letter-spacing: 0.3rem;
-    opacity: 15%;
-    position: absolute;
-    bottom:-10px;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    overflow: hidden;
+
+#edpick>hr{
+    border-top: 1px solid #FADF33 !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    height: 1px;
+    width: 95%;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
 }
 
 #edlink>a {
-    font-family: "Archivo-Medium";
-    color: #f5f5f5;
+    color: #FADF33;
 }
 #edchip{
-    background-color: #01f45b !important;
+    background-color: #FADF33 !important;
     color: #000100 !important;
+}
+/* Footer */
+#footer{
+    background-color: #FADF33;
+    padding: 0.1rem;
+    margin: 0 !important;
+}
+#footer>p{
+    margin: 0 !important;
 }
 
 /* Generic changes for the pages */
 .linkchange>*>a {
-    color: #7120fe !important;
+    color: #353238 !important;
+    text-decoration:underline !important;
 }
 /* Custom Top margin */
 .mt-1r{
     margin-top: 1rem;
 }
+
 /* Makes the top bar sticky to the top */
 .p-sticky-t {
     position: -webkit-sticky !important;
@@ -319,11 +319,19 @@
     top: 0;
     z-index: 10;
     padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #353238 !important;
+}
+
+.pt-2r{
+    margin-top: 2rem;
 }
 
 /* Allows for the toggling of the search bar on and off */
 #searchbar {
     display: none;
+    background-color: #353238;
+    margin: 0;
 }
 #sbuttS{
     visibility:visible;
@@ -351,11 +359,20 @@
 #sbar>input {
     width: 100% !important;
     border-radius: 5rem 0rem 0rem 5rem;
-    border: 1px solid #20292C;
+    border: 2px solid #FADF33;
+    background-color: #353238 ;
+    color:#FADF33;
     padding-left: 10px;
     padding-bottom: 0px !important;
     padding-top: 0px !important;
     padding-right: 0px !important;
+}
+#sbar>input::placeholder {
+    color:#FADF33;
+    font-family: "Archivo-Thin";
+}
+#sbar>input:focus {
+    color:#FADF33 !important;
 }
 
 #sbar>button {
@@ -365,26 +382,35 @@
     padding-right: 1.25rem;
 }
 #title {
-    position: relative;
-    display: flex;
+    padding: 0;
+    line-height: 1;
+    transform: skew(-15deg);
 }
 #title>a {
     text-decoration: none !important;
-    padding-bottom: 0px;
+    padding: 0px;
     line-height: 1;
-    align-items: flex-end;
-    display: flex;
+    color: #353238;
+    font-size: 1.9rem;
+    background-color: #FADF33;
+    padding: 0 0.5rem 0 0.5rem;
+    letter-spacing: -0.1rem;
 }
+
+@media (width > 400px) {
+    #title>a>img{
+        height:1.9rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+} 
 
 #title>a>img{
-    max-width: 50%;
-    align-items: flex-end;
-    margin: auto;
-    padding-bottom: 8px;
-}
+    height:1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
 
-#title>a>h1 {
-    font-family: "Archivo-Extrabold";
-    color: black;
-    letter-spacing: 0.2rem;
 }

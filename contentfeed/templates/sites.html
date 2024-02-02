@@ -1,14 +1,13 @@
 {% extends "standard.html" %} {% block content %}
-<div class="divider"></div>
-<div class="container grid-lg">
+<div class="container grid-lg pt-2r">
   <!--  Site List-->
-  <h2>Sources</h2>
+  <h1>Sources</h1>
   <div class="columns">
     {% for p in publications %}
     <!-- Change col width to 2 cols per line. its too packed with 3 -->
     <div class="column col-md-auto col-6 p-0"> 
       <div class="columns m-2" id="sitegrid">
-        <div class="column col-6 p-0"><h4><a href="{{p.pub_url}}" target="_blank">{{p.pub_name}}</a></h4></div>
+        <div class="column col-6 p-0"><h3><a href="{{p.pub_url}}" target="_blank">{{p.pub_name}}</a></h3></div>
         <div class="column col-6"><p>{{p.pub_description}}</p></div>
       </div>
     </div>
@@ -23,7 +22,7 @@
   </div>
 
   <!-- Rules -->
-  <div class="pt-2"><h3>Request to add your Site</h3></div>
+  <div class="pt-2"><h2>Request to add your Site</h2></div>
   <div class="tile">
     <div class="tile-icon">
       <div class="tile-icon"><i class="icon icon-minus"></i></div>
@@ -75,8 +74,8 @@
     </div>
     <div class="tile-content">
       <p>
-        While we have no problem with your site having an infrequent posting
-        schedule, in order to review your site we would like to see at least one
+        While I have no problem with your site having an infrequent posting
+        schedule, in order to review your site I would like to see at least one
         to two articles posted in good faith in the past twelve months.
       </p>
     </div>
@@ -98,7 +97,7 @@
     <div class="tile-content">
       <p>
         I reserve the right to reject your site as a new source based on grounds
-        not listed above, we'll be in contact with you about that process and
+        not listed above, I'll be in contact with you about that process and
         explain our reasoning if I have concerns.
       </p>
     </div>

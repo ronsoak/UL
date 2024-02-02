@@ -1,7 +1,6 @@
 {% extends "standard.html" %} {% block content %}
-<div class="divider"></div>
-<div class="container grid-lg">
-  <h2>Search</h2>
+<div class="container grid-lg pt-2r">
+  <h1>Search</h1>
   <p>
     Please enter your search terms below and it will search for articles where
     the title contains those keywords.
@@ -24,7 +23,7 @@
 </div>
 <!-- Search Results -->
 <div class="container grid-lg">
-  <h3>Results</h3>
+  <h2>Results</h2>
   {% for r in results %}
   <div class="tile mt-2">
     <div class="tile-icon"><i class="icon icon-minus"></i></div>
