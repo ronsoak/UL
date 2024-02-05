@@ -1,10 +1,13 @@
 {% extends "standard.html" %} {% block content %}
-<div class="container grid-lg pt-2r">
-  <h1>Search</h1>
-  <p>
-    Please enter your search terms below and it will search for articles where
-    the title contains those keywords.
-  </p>
+<div class="container grid-lg p-0 ">
+    <div id="cardTop" class="card">
+        <div class="card-header">
+          <div class="card-title h1">Search</div>
+        </div>
+        <div class="card-body pt-2">
+            <p>Search across all the articles we have featured. Simply enter your keywords in the search box below and it will return any titles containing those words.</p>
+        </div>
+      </div>
   <!-- Form -->
   <div class="container px-0 pb-2 mb-2">
     <form action="{% url 'search' %}" method="POST">

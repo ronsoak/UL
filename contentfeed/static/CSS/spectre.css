@@ -283,7 +283,8 @@ template {
 html {
   box-sizing: border-box;
   font-size: 20px;
-  line-height: 1.5;
+  /* line-height: 1.5; */
+  line-height: 1.2;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -2740,7 +2741,7 @@ summary.accordion-header::-webkit-details-marker {
   margin: 0;
   transform: skew(-15deg);
   color:#FADF33;
-  padding: 0 0.5rem 0 0.5rem;
+  padding: 0.15rem 0.5rem;
 }
 
 .pagination .page-item .page-item-subtitle {
@@ -3167,7 +3168,8 @@ summary.accordion-header::-webkit-details-marker {
 }
 
 .text-primary {
-  color: #5755d9 !important;
+  /* color: #5755d9 !important; */
+  color: #FADF33 !important;
 }
 
 a.text-primary:focus,
@@ -3280,13 +3282,17 @@ a.text-error:visited {
 }
 
 .bg-dark {
-  background: #303742 !important;
+  background: #353238 !important;
   color: #fff;
 }
 
 .bg-gray {
   background: #f7f8f9 !important;
 }
+
+.bg-yellow {
+    background: #FADF33 !important;
+  }
 
 .bg-success {
   background: #32b643 !important;

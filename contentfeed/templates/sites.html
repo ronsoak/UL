@@ -1,7 +1,15 @@
 {% extends "standard.html" %} {% block content %}
-<div class="container grid-lg pt-2r">
+<div class="container grid-lg p-0 ">
+    <div id="cardTop" class="card">
+        <hr>
+        <div class="card-header">
+          <div class="card-title h1">Sites</div>
+        </div>
+        <div class="card-body pt-2">
+            <p>Read more about the amazing publications featured here on Reconnect.</p>
+        </div>
+      </div>
   <!--  Site List-->
-  <h1>Sources</h1>
   <div class="columns">
     {% for p in publications %}
     <!-- Change col width to 2 cols per line. its too packed with 3 -->

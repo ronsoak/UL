@@ -9,7 +9,8 @@ contentfeed/migrations
 
 # Python Files
 __init__.py 
-manage.py 
+manage.py
+random_votes.py 
 
 #DB 
 db.sqlite3

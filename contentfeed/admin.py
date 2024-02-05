@@ -32,3 +32,6 @@ class ContactRequestAdmin(admin.ModelAdmin):
     def get_ordering(self, request):
         return ['contact_complete','-contact_date']
 
+
+# Customized Actions 
+    

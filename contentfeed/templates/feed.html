@@ -5,15 +5,14 @@
 {% with p_change=plimit|mul:p_multi %}
     <!-- Editors Pick  -->
     <div class="container grid-lg p-relative p-0">
-    <div id="edpick" class="card">
-        <hr>
+    <div id="cardTop" class="card">
         <div class="card-header">
           <div class="card-title h1">Editors Pick</div>
         </div>
         <div class="card-body pt-2">
             {% for c in curated_items %}
-            <div id="edlink"><a href="/itemclicked/{{c.item_id}}" class="vote-link" target="_blank">{{c.item_title}}</a></div>
-            <div class="mb-2"><span id="edchip" class="chip">{{c.item_source}}</span></div>
+            <div id="edlink" class="pb-2"><a href="/itemclicked/{{c.item_id}}" class="vote-link" target="_blank">{{c.item_title}}</a></div>
+            <div class="mb-2"><span id="edchip" class="chip bg-yellow">{{c.item_source}}</span></div>
             {% empty %}
             <p>No items to display</p>
             {% endfor %} 
@@ -52,7 +51,7 @@
             {% endif %}
             <div class="tile-content">
                 <div class="pb-1"><a href="/itemclicked/{{i.item_id}}" target="_blank">{{i.item_title}}</a></div>
-                <div><span id="cvote" class="chip"><a href="upvote/{{i.item_id}}">Vote</a></span><span class="chip">{{i.item_source}}</span></div>
+                <div><span id="cvote" class="chip bg-dark mr-2"><a href="upvote/{{i.item_id}}">Vote</a></span><span class="chip">{{i.item_source}}</span></div>
             </div>
         </div>
     <div class="divider"></div>

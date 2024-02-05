@@ -1,8 +1,12 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
+Disallow: /wp-includes/wlwmanifest.xml
+Disallow: */wp-includes/wlwmanifest.xml
+Disallow: /wordpress/
 Disallow: /.git/
 Disallow: /blogsite/
+Disallow: /wp-content/
 User-agent: GPTBot
 Disallow: /
 Sitemap: https://www.reconnect.quest/sitemap.xml

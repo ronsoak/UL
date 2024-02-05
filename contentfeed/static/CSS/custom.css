@@ -178,49 +178,80 @@
     font-display: swap;
     font-style: italic;
 }
-
-/* COLORS */
-/* RED: ef233c */
-/* Dark red: be0e23 */
-/* GREY: #E7ECEE*/
-/* BLACK: #20292C */
-/*  */
-/* New Colors */
-/* Orange: F45B01 */
-/* Grey:  EAEAEA*/
-/* Purple: 7120fe */
-/* Yellow: FEE440 */
-/* Green: 01f45b */
-/* BLACK:  000100*/
-/* WHITE: F5F5F5 */
-/*  */
-/*  */
 /* 
+-- Color Scheme
 Yellow: FADF33
 Orange: FF9D45
 Charcoal: 353238
-beige: EEE9D7 
+beige: EEE9D7  
 */
 /* ----- ----- ----- ----- Custom CSS ----- ----- ----- ----- ----- -----  */
-/* about card */
-#atcard{
-    border: none !important;
-    background-color: #353238;
-    color: #FADF33;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    border-radius: 0;
+/* About Code */
+#aboutBox{
+    padding: 1rem;
 }
-#atcard>.card-body>p>a{
-    color: #353238 ;
-    background-color: #FADF33;
-    text-decoration: none;
+#aboutTitle{
+    padding-top: 1rem;
+    width: 80% !important;
+    margin-bottom: 1rem;
+}
+#aboutTitle>h2{
+    font-family: "Archivo-ExtraBold";
+    font-size: 1rem;
+    transform: skew(-15deg);
+    padding-bottom: 0.25rem;
+}
+#aboutTitle>p:nth-child(2){
+    padding: 0.5rem;
+}
+#aboutTitle>p:nth-child(3),p:nth-child(4),p:nth-child(5){
+    padding: 0 0.5rem;
+}
+#aboutImage{
+margin: auto;
+}
+#aboutlast{
+    padding-top: 1rem;
+    width: 80% !important;
+}
+#aboutlast>h2{
+    font-family: "Archivo-ExtraBold";
+    font-size: 1rem;
+    transform: skew(-15deg);
+    padding-bottom: 0.25rem;
+}
+#aboutlast>p{
+    padding: 0.5rem;
 }
 
-/* makes background dark */
-.bg-charcoal {
-    background: #353238 !important;
+
+
+#aboutNum{
+    padding: 0 1rem 1rem 1rem;
 }
+
+#aboutNum>div{
+    width: 100%;
+}
+
+
+#aboutNum>*>p{
+    padding: 0.5rem 0.15rem 0rem 0.15rem;
+}
+
+#aboutHero{
+    padding: 2rem !important;
+}
+#numberTitle{
+    width: 40px;
+    aspect-ratio: 1/1;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* Changes the color of any button to this color */
 .btn.btn-col1 {
@@ -242,36 +273,21 @@ beige: EEE9D7
     border-color: #FF9D45;
     color: #353238;
 }
-
-/* Changes the vote chip */
-#cvote{
-    background-color: #353238 !important;
-}
-#cvote>a {
-    font-family: "Archivo-Semibold";
-    color: #FADF33 !important;
-}
-#cvote>a:visited {
-    color: #EEE9D7 !important;
-}
-#dropmenu {
-    background-color: #FADF33;
-}
-
-/* Removes the border from the editors pick */
-#edpick {
+/* Cards */
+/* Top Card */
+#cardTop {
     border: none !important;
     background-color: #353238;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-bottom: 1rem ;
     border-radius: 0;
+    color: #FADF33 !important;
 }
-
-#edpick>.card-header>.card-title{
+#cardTop>.card-header>.card-title{
     color: #fff;
 }
-
-#edpick>hr{
+#cardTop>hr{
     border-top: 1px solid #FADF33 !important;
     border-bottom: none !important;
     border-left: none !important;
@@ -284,22 +300,71 @@ beige: EEE9D7
     margin-right: auto;
     border-radius: 0;
 }
+#edlink>a {
+    color: #FADF33;
+}
+
+
+/* Changes the vote chip */
+#cvote>a {
+    font-family: "Archivo-Semibold";
+    color: #FADF33 !important;
+}
+#cvote>a:visited {
+    color: #EEE9D7 !important;
+}
+/* Removes the border from the editors pick */
+#cardTop {
+    border: none !important;
+    background-color: #353238;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0;
+    color: #FADF33 !important;
+}
+
+#cardTop>.card-header>.card-title{
+    color: #fff;
+}
+
+/* Disclaimer  */
+#discTitle{
+    font-family: "Archivo-ExtraBold";
+    font-size: 1rem;
+    transform: skew(-15deg);
+    padding: 0.25rem 1rem;
+    margin-top: 1.5rem;
+}
+
+#discItems{
+    max-width: 90%;
+    padding: 1rem;
+}
+
+#discIcon{
+    border: 1px solid black;
+    width: 30px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+#discItems>.tile{
+    margin-bottom: 0.5rem;
+}
 
 #edlink>a {
     color: #FADF33;
 }
-#edchip{
-    background-color: #FADF33 !important;
-    color: #000100 !important;
-}
+
 /* Footer */
-#footer{
-    background-color: #FADF33;
-    padding: 0.1rem;
-    margin: 0 !important;
+#footer>*>p{
+    font-size: 14px;
 }
-#footer>p{
-    margin: 0 !important;
+#footer>*>p>a{
+    color: #FADF33;
 }
 
 /* Generic changes for the pages */
@@ -307,9 +372,10 @@ beige: EEE9D7
     color: #353238 !important;
     text-decoration:underline !important;
 }
-/* Custom Top margin */
-.mt-1r{
-    margin-top: 1rem;
+
+.link-yellow>*>a{
+    background-color: #FADF33;
+    text-transform: none;
 }
 
 /* Makes the top bar sticky to the top */
@@ -322,16 +388,11 @@ beige: EEE9D7
     padding-bottom: 1rem;
     background-color: #353238 !important;
 }
-
-.pt-2r{
-    margin-top: 2rem;
-}
-
 /* Allows for the toggling of the search bar on and off */
 #searchbar {
     display: none;
     background-color: #353238;
-    margin: 0;
+    margin: 2rem 0 0 0;
 }
 #sbuttS{
     visibility:visible;
@@ -374,43 +435,75 @@ beige: EEE9D7
 #sbar>input:focus {
     color:#FADF33 !important;
 }
-
 #sbar>button {
     border-radius: 0rem 5rem 5rem 0rem;
     text-align: center;
-    padding-left: 1rem;
-    padding-right: 1.25rem;
+    padding-left: .5rem;
+    padding-right: 0.75rem;
 }
 #title {
     padding: 0;
     line-height: 1;
     transform: skew(-15deg);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
 }
+
 #title>a {
     text-decoration: none !important;
-    padding: 0px;
-    line-height: 1;
     color: #353238;
-    font-size: 1.9rem;
+    line-height: 1;
+    font-size: 25px;
+    margin: auto;
     background-color: #FADF33;
     padding: 0 0.5rem 0 0.5rem;
     letter-spacing: -0.1rem;
+    vertical-align: middle;
+    
+}
+/* JS will change the text of this title. a span is hiding  */
+#titleText::after{
+    visibility: visible;
+    content: attr(data-title); 
 }
 
-@media (width > 400px) {
-    #title>a>img{
-        height:1.9rem;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+/* Media */
+@media screen and (min-width: 500px) {
+    #aboutTitle>h2{
+        font-family: "Archivo-ExtraBold";
+        transform: skew(-15deg);
     }
-} 
+    #aboutTitle{
+        padding-top: 1rem;
+    }
+    #title>a{
+        text-decoration: none !important;
+        padding: 0px;
+        line-height: 1;
+        color: #353238;
+        font-size: 40px;
+        background-color: #FADF33;
+        padding: 0 0.5rem 0 0.5rem;
+        letter-spacing: -0.1rem;
+        }
+    #discItems{
+            max-width: 80%;
+            padding: 1rem;
+        }
+    #sbar>button {
+        border-radius: 0rem 5rem 5rem 0rem;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1.25rem;
+        }       
 
-#title>a>img{
-    height:1.5rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-
-}
+    #footer>*>p{
+            font-size: 1rem;
+        }
+    }
+@media screen and (min-width: 700px) {
+        #aboutNum>div{
+            width: 33.33333333% !important;
+        }
+    }

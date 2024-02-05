@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'CSS/spectre-exp.css' %}" />
     <script src="{% static 'JS/searchToggle.js' %}"></script> 
     <script src="{% static 'JS/clickToggle.js' %}"></script> 
-    <script src="{% static 'JS/urlClick.js' %}"></script> 
+    <script src="{% static 'JS/scrolltracker.js' %}"></script> 
     <title>reconnect</title>
     <link rel="stylesheet" href="" />
   </head>
@@ -18,7 +18,7 @@
   <!-- Gets Page URL -->
   <!-- <body oncontextmenu="return false;"> -->
     <body>
-    <div class="bg-charcoal container grid-lg p-sticky-t">
+    <div class="bg-dark container grid-lg p-sticky-t">
     <div class="container grid-lg ">
       <!-- Title & Nav -->
       <div class="columns pt-2">
@@ -32,7 +32,7 @@
               onclick="clickToggle()"
               ><i class="icon icon-menu"></i
             ></a>
-            <ul id="dropmenu" class="menu">
+            <ul id="dropmenu" class="menu bg-yellow">
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/sites">Sites</a></li>
@@ -41,8 +41,7 @@
           </div>
         </div>
         <div id="title" class="column col-8 text-center">
-            <a href="/">RECONNECT</a>
-            <!-- <a href="/"><img src="{% static 'images/title.png' %}"></a> -->
+            <a id="titleText" href="/"><span id="t1">RECONNECT</span></a>
         </div>
         <div class="column col-2 p-relative">
           <button onclick="searchToggle()" id="slink" class="btn btn-lg btn-action float-right btn-col1 p-relative"><i id="sbuttS" class="icon icon-search"></i><i id="sbuttX" class="icon icon-arrow-up"></i></button>
@@ -50,7 +49,7 @@
       </div>
     </div>
     <!-- Search Bar -->
-    <div id="searchbar" class="container grid-lg px-2 pb-2">
+    <div id="searchbar" class="container grid-lg">
         <form action="{% url 'search' %}" method="POST">
           <div id="sbar" class="input-group px-2">
             {% csrf_token %}
@@ -68,10 +67,10 @@
     <!-- Content -->
     {% block content %} {% endblock %}
     <!-- Footer -->
-    <div class="container grid-lg mt-1r">
-        <div class="columns text-center">
+    <div class="container grid-lg mt-2">
+        <div id="footer" class="columns text-center p-2 bg-dark">
             <div class="column col-1"></div>
-            <div id="footer" class="column col-10 text-center linkchange"><p>This site is an <a href="https://linktr.ee/antranaut">Alex Antra</a> product, design by <a href="http://micahtabak.myportfolio.com/">Micah Tabak</a></p></div>
+            <div class="column col-10 text-center text-primary p-2"><p class="p-0 m-0">This site is an <a href="https://linktr.ee/antranaut"> Alex Antra </a> product, design by <a href="http://micahtabak.myportfolio.com/"> Micah Tabak </a>.</p></div>
             <div class="column col-1"></div>
     </div>
   </body>

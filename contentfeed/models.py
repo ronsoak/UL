@@ -62,7 +62,7 @@ class ContentItem(models.Model):
     # Methods
     def __str__(self):
         return self.item_title
-
+    
 # Content Votes
 class Votes(models.Model):
     # Fields 
