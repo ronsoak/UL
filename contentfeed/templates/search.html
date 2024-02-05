@@ -1,26 +1,33 @@
 {% extends "standard.html" %} {% block content %}
-<div class="container grid-lg p-0 ">
-    <div id="cardTop" class="card">
-        <div class="card-header">
-          <div class="card-title h1">Search</div>
-        </div>
-        <div class="card-body pt-2">
-            <p>Search across all the articles we have featured. Simply enter your keywords in the search box below and it will return any titles containing those words.</p>
-        </div>
-      </div>
+<div class="container grid-lg p-0">
+  <div id="cardTop" class="card">
+    <div class="card-header">
+      <div class="card-title h1">Search</div>
+    </div>
+    <div class="card-body pt-2">
+      <p>
+        Search across all the articles or sites that we have. Simply enter your
+        keywords in the search box below and it will return any articles
+        matching those terms and / or the articles of the sites matching those
+        terms.
+      </p>
+    </div>
+  </div>
   <!-- Form -->
   <div class="container px-0 pb-2 mb-2">
     <form action="{% url 'search' %}" method="POST">
-        <div id="sbar" class="input-group">
-            {% csrf_token %}
-            <input
-              class="input-group"
-              type="text"
-              placeholder="Please enter your search…"
-              name="Article Name"
-            />
-            <button class="btn btn-col1 input-group-btn" type="submit"><i class="icon icon-search"></i></button>
-          </div>
+      <div id="sbar" class="input-group">
+        {% csrf_token %}
+        <input
+          class="input-group"
+          type="text"
+          placeholder="Please enter your search…"
+          name="Search Terms"
+        />
+        <button class="btn btn-col1 input-group-btn" type="submit">
+          <i class="icon icon-search"></i>
+        </button>
+      </div>
     </form>
   </div>
 </div>
@@ -43,4 +50,35 @@
   <p>No Results</p>
   {% endfor %}
 </div>
+<!-- Pagination -->
+<div class="container grid-lg">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="page-item page-prev">
+          <a href="?page={{ page_obj.previous_page_number }}">
+            <div class="page-item-title">Previous</div>
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item page-prev disabled">
+            <a href="#">
+              <div class="page-item-title">Previous</div>
+            </a>
+          </li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li class="page-item page-next">
+          <a href="?page={{ page_obj.next_page_number }}">
+            <div class="page-item-title">Next</div>
+          </a>
+        </li>
+      {% else %}
+      <li class="page-item page-next disabled">
+        <a href="#">
+          <div class="page-item-title">Next</div>
+        </a>
+      </li>
+      {% endif %}
+        </ul>
+    </div>
 {% endblock %}

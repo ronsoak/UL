@@ -6,6 +6,7 @@ from contentfeed.forms import NewContactForm, NewSourceForm
 from contentfeed.models import ContentItem, Publications, Votes
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 
 # -- -- -- -- -- -- PAGE RENDERERS -- -- -- -- -- -- -- #
 # About Page
@@ -77,11 +78,12 @@ def sites(request):
 
 # Search Page
 def search(request):
-    # Search results model 
+    # Search results model
     if request.method == "POST":
-        squery = request.POST.get('Article Name', None)
+        squery = request.POST.get('Search Terms', None)
         if squery:
-            results = ContentItem.objects.filter(item_title__icontains=squery)[:50]
+            qlimit = 500
+            results = ContentItem.objects.filter(Q(item_title__icontains=squery, item_hidden = False) | Q(item_source__pub_name__icontains=squery)).order_by('-item_datepublished')[:qlimit]
             return render(request, 'search.html', {"results":results})
     return render(request, 'search.html')
 
