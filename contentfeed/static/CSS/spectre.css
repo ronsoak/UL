@@ -618,23 +618,28 @@ html:lang(ko),
 }
 
 .btn.btn-primary {
-  background: #5755d9;
-  border-color: #4b48d6;
-  color: #fff;
+    background: #FADF33;
+    border-color: #FADF33;
+    color: #353238;
+}
+.btn.btn-secondary {
+    background: #353238;
+    border-color: #353238;
+    color: #FADF33;
 }
 
 .btn.btn-primary:focus,
 .btn.btn-primary:hover {
-  background: #4240d4;
-  border-color: #3634d2;
-  color: #fff;
+    background: #353238;
+    border-color: #FADF33;
+    color: #FADF33;
 }
 
 .btn.btn-primary:active,
 .btn.btn-primary.active {
-  background: #3a38d2;
-  border-color: #302ecd;
-  color: #fff;
+    background: #FF9D45;
+    border-color: #FF9D45;
+    color: #353238;
 }
 
 .btn.btn-primary.loading::after {
@@ -1567,8 +1572,8 @@ video.video-responsive::before {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-left: -.4rem;
-  margin-right: -.4rem;
+  /* margin-left: -.4rem;
+  margin-right: -.4rem; */
 }
 
 .cols.col-gapless,

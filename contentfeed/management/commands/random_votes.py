@@ -10,7 +10,7 @@ class Command(BaseCommand):
         datestart = date.today()
         dateend = datestart - timedelta (days=90)
         r = random.randint(1, 5)
-        c = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('?')[:10]
+        c = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).exclude(item_source__pub_name__icontains="Aftermath").order_by('?')[:10]
         for i in c:
             i.item_votecount = i.item_votecount + r 
             i.save()

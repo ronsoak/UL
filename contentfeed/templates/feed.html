@@ -5,7 +5,7 @@
 {% with p_change=plimit|mul:p_multi %}
     <!-- Editors Pick  -->
     <div class="container grid-lg p-relative p-0">
-    <div id="cardTop" class="card">
+    <div id="ed-pick" class="card">
         <div class="card-header">
           <div class="card-title h1">Editors Pick</div>
         </div>
@@ -58,6 +58,19 @@
     {% empty %}
         <p>No Content to display</p>
     {% endfor %} 
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
     </div>
     {% endwith %}
     {% endwith %}

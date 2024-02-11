@@ -1,21 +1,26 @@
 {% extends "standard.html" %} {% block content %}
-<div class="container grid-lg p-0 ">
-    <div id="cardTop" class="card">
-        <hr>
-        <div class="card-header">
-          <div class="card-title h1">Sites</div>
-        </div>
-        <div class="card-body pt-2">
-            <p>Read more about the amazing publications featured here on Reconnect.</p>
-        </div>
-      </div>
+<div class="container grid-lg p-0">
+  <!-- Page Title -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div id="header-big">
+    <span class="bg-yellow fnt-extra px-1r">Sites</span>
+  </div>
+  <!-- Blurb Text -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="px-1r">
+    <span>
+      Read more about the amazing publications featured here on Reconnect. If
+      you wish to submit your site for Reconnect, read the rules and fill out
+      the form at the bottom.
+    </span>
+  </div>
+  <!-- Site List -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
   <!--  Site List-->
-  <div class="columns">
+  <div class="columns mt-2r">
     {% for p in publications %}
-    <!-- Change col width to 2 cols per line. its too packed with 3 -->
-    <div class="column col-md-auto col-6 p-0"> 
-      <div class="columns m-2" id="sitegrid">
-        <div class="column col-6 p-0"><h3><a href="{{p.pub_url}}" target="_blank">{{p.pub_name}}</a></h3></div>
+    <div class="column col-md-auto col-6 p-0">
+      <div class="columns m-2 bt-2">
+        <div class="column col-6 p-0">
+          <h3><a href="{{p.pub_url}}" target="_blank">{{p.pub_name}}</a></h3>
+        </div>
         <div class="column col-6"><p>{{p.pub_description}}</p></div>
       </div>
     </div>
@@ -29,175 +34,219 @@
     {% endfor %}
   </div>
 
-  <!-- Rules -->
-  <div class="pt-2"><h2>Request to add your Site</h2></div>
-  <div class="tile">
-    <div class="tile-icon">
-      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+  <!-- Rules -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div id="header-big" class="mb-2r">
+    <span class="bg-yellow fnt-extra p-2">Site Request Rules</span>
+  </div>
+  <!-- Rule Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-    <div class="tile-content">
-      <p>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
         Your site needs to have an RSS feed, I'll be working on other methods of
         acquiring data in the future but at the moment its RSS only.
-      </p>
+      </span>
     </div>
   </div>
-  <div class="tile">
-    <div class="tile-icon">
-      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+  <!-- Rule Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-    <div class="tile-content">
-      <p>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
         Your site needs to be contain a decent amount of content about video
         games, game development, or the video game industry.
-      </p>
+      </span>
     </div>
   </div>
-  <div class="tile">
-    <div class="tile-icon">
-      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+  <!-- Rule Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-    <div class="tile-content">
-      <p>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
         While some pay-walling is acceptable, i.e Substack, there also needs to
         be freely-available content.
-      </p>
+      </span>
     </div>
   </div>
-  <div class="tile">
-    <div class="tile-icon">
-      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+  <!-- Rule Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-    <div class="tile-content">
-      <p>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
         The clear majority of your content needs to be editorial, if every post
         is the 'latest' news or a wall of reviews, it's not the brand of content
         I'm looking to highlight.
-      </p>
+      </span>
     </div>
   </div>
-  <div class="tile">
-    <div class="tile-icon">
-      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+  <!-- Rule Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-    <div class="tile-content">
-      <p>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
         While I have no problem with your site having an infrequent posting
         schedule, in order to review your site I would like to see at least one
         to two articles posted in good faith in the past twelve months.
-      </p>
+      </span>
     </div>
   </div>
-  <div class="tile">
-    <div class="tile-icon">
-      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+  <!-- Rule Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-    <div class="tile-content">
-      <p>
-        The review of your site will not be undertaken in any set time frame..
-      </p>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        The review of your site will not be undertaken in any set time frame.
+      </span>
     </div>
   </div>
-  <div class="tile">
-    <div class="tile-icon">
-      <div class="tile-icon"><i class="icon icon-minus"></i></div>
+  <!-- Rule Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-    <div class="tile-content">
-      <p>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
         I reserve the right to reject your site as a new source based on grounds
         not listed above, I'll be in contact with you about that process and
         explain our reasoning if I have concerns.
-      </p>
+      </span>
     </div>
+  </div>
+
+  <div id="header-medium" class="mt-2r">
+    <span class="bg-yellow fnt-extra p-2">Request Form</span>
   </div>
   <div class="container clearfix d-block">
-  <div class="container grid-xs float-left p-0">
-    <!-- Form submission Toast -->
-    {% if fvalid == 1 %}
-    <div class="toast toast-success">
-      <button class="btn btn-clear float-right"></button>
-      Form Submitted Successfully
+    <div class="container grid-xs float-left p-0">
+      <!-- Form submission Toast -->
+      {% if fvalid == 1 %}
+      <div class="toast toast-success">
+        <button class="btn btn-clear float-right"></button>
+        Form Submitted Successfully
+      </div>
+      {% elif fvalid == 2 %}
+      <div class="toast toast-error">
+        <button class="btn btn-clear float-right"></button>
+        Form not submitted, review your entry and try again.
+      </div>
+      {% endif %}
+      <!-- Form -->
+      <form method="POST">
+        {% csrf_token %} {{ cform.non_field_errors }}
+        <div class="form-group">
+          {{ cform.subject.errors }}
+          <label class="form-label" for="id_pubreq_name">Your Name</label>
+          <input
+            class="form-input"
+            type="text"
+            name="pubreq_name"
+            maxlength="200"
+            id="id_pubreq_name"
+          />
+          <label class="form-label label-sm"
+            >How do you want me to address you?.</label
+          >
+        </div>
+        <div class="form-group">
+          {{ cform.subject.errors }}
+          <label class="form-label" for="id_pubreq_email">Your Email</label>
+          <input
+            class="form-input"
+            type="text"
+            name="pubreq_email"
+            maxlength="200"
+            id="id_pubreq_email"
+          />
+          <label class="form-label label-sm"
+            >I'll contact you at this address.</label
+          >
+        </div>
+        <div class="form-group">
+          {{ cform.subject.errors }}
+          <label class="form-label" for="id_pubreq_url">Website URL</label>
+          <input
+            class="form-input"
+            type="url"
+            name="pubreq_url"
+            maxlength="2000"
+            id="id_pubreq_url"
+          />
+          <label class="form-label label-sm"
+            >The address of your website.</label
+          >
+        </div>
+        <div class="form-group">
+          {{ cform.subject.errors }}
+          <label class="form-label" for="id_pubreq_feed">Feed URL</label>
+          <input
+            class="form-input"
+            type="url"
+            name="pubreq_feed"
+            maxlength="2000"
+            id="id_pubreq_feed"
+          />
+          <label class="form-label label-sm"
+            >The address of your feed i.e yoursite.com/rss.</label
+          >
+        </div>
+        <div class="form-group">
+          {{ cform.subject.errors }}
+          <label class="form-label" for="id_pubreq_notes">Notes</label>
+          <textarea
+            class="form-input"
+            name="pubreq_notes"
+            rows="5"
+            maxlength="2000"
+            id="id_pubreq_notes"
+          ></textarea>
+          <label class="form-label label-sm"
+            >Please include any additional information about your
+            request.</label
+          >
+        </div>
+        <input class="btn btn-primary mb-2r" type="submit" value="Submit" />
+      </form>
     </div>
-    {% elif fvalid == 2 %}
-    <div class="toast toast-error">
-      <button class="btn btn-clear float-right"></button>
-      Form not submitted, review your entry and try again.
-    </div>
-    {% endif %}
-    <!-- Form -->
-    <form method="POST">
-      {% csrf_token %} {{ cform.non_field_errors }}
-      <div class="form-group">
-        {{ cform.subject.errors }}
-        <label class="form-label" for="id_pubreq_name">Your Name</label>
-        <input
-          class="form-input"
-          type="text"
-          name="pubreq_name"
-          maxlength="200"
-          id="id_pubreq_name"
-        />
-        <label class="form-label label-sm"
-          >How do you want me to address you?.</label
-        >
-      </div>
-      <div class="form-group">
-        {{ cform.subject.errors }}
-        <label class="form-label" for="id_pubreq_email">Your Email</label>
-        <input
-          class="form-input"
-          type="text"
-          name="pubreq_email"
-          maxlength="200"
-          id="id_pubreq_email"
-        />
-        <label class="form-label label-sm"
-          >I'll contact you at this address.</label
-        >
-      </div>
-      <div class="form-group">
-        {{ cform.subject.errors }}
-        <label class="form-label" for="id_pubreq_url">Website URL</label>
-        <input
-          class="form-input"
-          type="url"
-          name="pubreq_url"
-          maxlength="2000"
-          id="id_pubreq_url"
-        />
-        <label class="form-label label-sm">The address of your website.</label>
-      </div>
-      <div class="form-group">
-        {{ cform.subject.errors }}
-        <label class="form-label" for="id_pubreq_feed">Feed URL</label>
-        <input
-          class="form-input"
-          type="url"
-          name="pubreq_feed"
-          maxlength="2000"
-          id="id_pubreq_feed"
-        />
-        <label class="form-label label-sm"
-          >The address of your feed i.e yoursite.com/rss.</label
-        >
-      </div>
-      <div class="form-group">
-        {{ cform.subject.errors }}
-        <label class="form-label" for="id_pubreq_notes">Notes</label>
-        <textarea
-          class="form-input"
-          name="pubreq_notes"
-          rows="5"
-          maxlength="2000"
-          id="id_pubreq_notes"
-        ></textarea>
-        <label class="form-label label-sm"
-          >Please include any additional information about your request.</label
-        >
-      </div>
-      <input class="btn btn-col1" type="submit" value="Submit" />
-    </form>
   </div>
-</div>
 </div>
 {% endblock %}

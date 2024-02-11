@@ -1,509 +1,353 @@
-/* Fonts */
-@font-face {
-    font-family: "Archivo-Thin";
-    src: url("../fonts/Archivo-Thin.woff2") format("woff2"),
-        url("../fonts/Archivo-Thin.woff") format("woff"),
-        url("../fonts/Archivo-Thin.ttf") format("truetype");
-    font-weight: 100;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-ThinItalic";
-    src: url("../fonts/Archivo-ThinItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-ThinItalic.woff") format("woff"),
-        url("../fonts/Archivo-ThinItalic.ttf") format("truetype");
-    font-weight: 100;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-ExtraLight";
-    src: url("../fonts/Archivo-ExtraLight.woff2") format("woff2"),
-        url("../fonts/Archivo-ExtraLight.woff") format("woff"),
-        url("../fonts/Archivo-ExtraLight.ttf") format("truetype");
-    font-weight: 200;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-ExtraLightItalic";
-    src: url("../fonts/Archivo-ExtraLightItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-ExtraLightItalic.woff") format("woff"),
-        url("../fonts/Archivo-ExtraLightItalic.ttf") format("truetype");
-    font-weight: 200;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-Light";
-    src: url("../fonts/Archivo-Light.woff2") format("woff2"),
-        url("../fonts/Archivo-Light.woff") format("woff"),
-        url("../fonts/Archivo-Light.ttf") format("truetype");
-    font-weight: 300;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-LightItalic";
-    src: url("../fonts/Archivo-LightItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-LightItalic.woff") format("woff"),
-        url("../fonts/Archivo-LightItalic.ttf") format("truetype");
-    font-weight: 300;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-Regular";
-    src: url("../fonts/Archivo-Regular.woff2") format("woff2"),
-        url("../fonts/Archivo-Regular.woff") format("woff"),
-        url("../fonts/Archivo-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-Italic";
-    src: url("../fonts/Archivo-Italic.woff2") format("woff2"),
-        url("../fonts/Archivo-Italic.woff") format("woff"),
-        url("../fonts/Archivo-Italic.ttf") format("truetype");
-    font-weight: 400;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-Medium";
-    src: url("../fonts/Archivo-Medium.woff2") format("woff2"),
-        url("../fonts/Archivo-Medium.woff") format("woff"),
-        url("../fonts/Archivo-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-MediumItalic";
-    src: url("../fonts/Archivo-MediumItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-MediumItalic.woff") format("woff"),
-        url("../fonts/Archivo-MediumItalic.ttf") format("truetype");
-    font-weight: 500;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-SemiBold";
-    src: url("../fonts/Archivo-SemiBold.woff2") format("woff2"),
-        url("../fonts/Archivo-SemiBold.woff") format("woff"),
-        url("../fonts/Archivo-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-SemiBoldItalic";
-    src: url("../fonts/Archivo-SemiBoldItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-SemiBoldItalic.woff") format("woff"),
-        url("../fonts/Archivo-SemiBoldItalic.ttf") format("truetype");
-    font-weight: 600;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-Bold";
-    src: url("../fonts/Archivo-Bold.woff2") format("woff2"),
-        url("../fonts/Archivo-Bold.woff") format("woff"),
-        url("../fonts/Archivo-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-BoldItalic";
-    src: url("../fonts/Archivo-BoldItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-BoldItalic.woff") format("woff"),
-        url("../fonts/Archivo-BoldItalic.ttf") format("truetype");
-    font-weight: 700;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-ExtraBold";
-    src: url("../fonts/Archivo-ExtraBold.woff2") format("woff2"),
-        url("../fonts/Archivo-ExtraBold.woff") format("woff"),
-        url("../fonts/Archivo-ExtraBold.ttf") format("truetype");
-    font-weight: 800;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-ExtraBoldItalic";
-    src: url("../fonts/Archivo-ExtraBoldItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-ExtraBoldItalic.woff") format("woff"),
-        url("../fonts/Archivo-ExtraBoldItalic.ttf") format("truetype");
-    font-weight: 800;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Archivo-Black";
-    src: url("../fonts/Archivo-Black.woff2") format("woff2"),
-        url("../fonts/Archivo-Black.woff") format("woff"),
-        url("../fonts/Archivo-Black.ttf") format("truetype");
-    font-weight: 900;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Archivo-BlackItalic";
-    src: url("../fonts/Archivo-BlackItalic.woff2") format("woff2"),
-        url("../fonts/Archivo-BlackItalic.woff") format("woff"),
-        url("../fonts/Archivo-BlackItalic.ttf") format("truetype");
-    font-weight: 900;
-    font-display: swap;
-    font-style: italic;
-}
+/* COLOR SCHEME */
 /* 
--- Color Scheme
-Yellow: FADF33
-Orange: FF9D45
-Charcoal: 353238
-beige: EEE9D7  
+-- YELLOW: #FADF33
+-- BLACK:  #353238 
+-- BEIGE:  #EEE9D7
+-- ORANGE: #FF9D45
 */
-/* ----- ----- ----- ----- Custom CSS ----- ----- ----- ----- ----- -----  */
-/* About Code */
-#aboutBox{
-    padding: 1rem;
-}
-#aboutTitle{
-    padding-top: 1rem;
-    width: 80% !important;
-    margin-bottom: 1rem;
-}
-#aboutTitle>h2{
-    font-family: "Archivo-ExtraBold";
-    font-size: 1rem;
-    transform: skew(-15deg);
-    padding-bottom: 0.25rem;
-}
-#aboutTitle>p:nth-child(2){
-    padding: 0.5rem;
-}
-#aboutTitle>p:nth-child(3),p:nth-child(4),p:nth-child(5){
-    padding: 0 0.5rem;
-}
-#aboutImage{
-margin: auto;
-}
-#aboutlast{
-    padding-top: 1rem;
-    width: 80% !important;
-}
-#aboutlast>h2{
-    font-family: "Archivo-ExtraBold";
-    font-size: 1rem;
-    transform: skew(-15deg);
-    padding-bottom: 0.25rem;
-}
-#aboutlast>p{
-    padding: 0.5rem;
-}
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+/* -- -- STANDARD CLASSES */
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+/*  */
+/* -- -- -- -- -- --  */
+/* -- -- FONTS */
+/* -- -- -- -- -- -- */
+.fnt-thin{      font-family:"Archivo-Thin"             !important;}
+.fnt-i-thin{    font-family:"Archivo-ThinItalic"       !important;}
+.fnt-extraL{    font-family:"Archivo-ExtraLight"       !important;}
+.fnt-i-extraL{  font-family:"Archivo-ExtraLightItalic" !important;}
+.fnt-light{     font-family:"Archivo-Light"            !important;}
+.fnt-i-light{   font-family:"Archivo-LightItalic"      !important;}
+.fnt-reg{       font-family:"Archivo-Regular"          !important;}
+.fnt-i-reg{     font-family:"Archivo-Italic"           !important;}
+.fnt-med{       font-family:"Archivo-Medium"           !important;}
+.fnt-i-med{     font-family:"Archivo-MediumItalic"     !important;}
+.fnt-semi{      font-family:"Archivo-SemiBold"         !important;}
+.fnt-i-semi{    font-family:"Archivo-SemiBoldItalic"   !important;}
+.fnt-bold{      font-family:"Archivo-Bold"             !important;}
+.fnt-i-bold{    font-family:"Archivo-BoldItalic"       !important;}
+.fnt-extra{     font-family:"Archivo-ExtraBold"        !important;}
+.fnt-i-extra{   font-family:"Archivo-ExtraBoldItalic"  !important;}
+.fnt-black{     font-family:"Archivo-Black"            !important;}
+/* -- -- -- -- -- --  */
+/* -- -- FONT SIZE    */
+/* -- -- -- -- -- --  */
+.fnt-hr{    font-size:.5rem     !important;}
+.fnt-1r{    font-size:1rem      !important;}
+.fnt-2r{    font-size:2rem      !important;}
+/* -- -- -- -- -- --  */
+/* -- -- PADDING      */
+/* -- -- -- -- -- --  */
+/* ALL */
+.p-hr{  padding:0.5rem          !important;}
+.p-1r{  padding:1rem            !important;}
+.p-2r{  padding:2rem            !important;}
+/* LEFT / RIGHT (X) */
+.pl-hr{ padding-left:.5rem      !important;}
+.pl-1r{ padding-left:1rem       !important;}
+.pl-1hr{ padding-left:1.5rem    !important;}
+.pl-2r{ padding-left:2rem       !important;}
+.pr-hr{ padding-right:.5rem     !important;}
+.pr-1r{ padding-right:1rem      !important;}
+.pr-1hr{ padding-right:1.5rem   !important;}
+.pr-2r{ padding-right:2rem      !important;}
+.px-1r{ padding-left:1rem       !important; 
+        padding-right:1rem      !important;}
+/* TOP / BOTTOM (Y) */
+.pt-1r{ padding-top:1rem        !important;}
+.pt-2r{ padding-top:2rem        !important;}
+.pb-1r{ padding-bottom:1rem     !important;}
+.pb-2r{ padding-bottom:2rem     !important;}
+.py-hr{ padding-top:.5rem       !important;
+        padding-bottom:.5rem    !important;}
+.py-1r{ padding-top:1rem        !important;
+        padding-bottom:1rem     !important;}
+.py-2r{ padding-top:2rem        !important;
+        padding-bottom:2rem     !important;}
+/* -- -- -- -- -- --  */
+/* -- -- Margins      */
+/* -- -- -- -- -- --  */
+/* ALL */
+.m-a{   margin:auto             !important;}
+.m-1r{  margin:1rem             !important;}
+/* LEFT / RIGHT (X) */
+.ml-1r{ margin-left:1rem        !important;}
+.mr-1r{ margin-right:1rem       !important;}
+/* TOP / BOTTOM (Y) */
+.mt-1r{ margin-top:1rem         !important;}
+.mt-2r{ margin-top:2rem         !important;}
+.mb-hr{ margin-bottom:0.5rem    !important;}
+.mb-1r{ margin-bottom:1rem      !important;}
+.mb-2r{ margin-bottom:2rem      !important;}
+.my-2r{ margin-top:2rem         !important;
+        margin-bottom:2rem      !important;}
+.my-1r{ margin-top:1em          !important;
+        margin-bottom:1rem      !important}
+/* -- -- -- -- -- --  */
+/* -- -- Sizing       */
+/* -- -- -- -- -- --  */
+.w60{   width:60px              !important;}
+/* -- -- -- -- -- --  */
+/* -- -- Colors       */
+/* -- -- -- -- -- --  */
+.text-dark{ color:#353238     !important;}
+/* -- -- -- -- -- --  */
+/* -- -- Borders      */
+/* -- -- -- -- -- --  */
+.bt-2{border-top:2px solid black !important;}
 
 
-
-#aboutNum{
-    padding: 0 1rem 1rem 1rem;
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+/* -- -- STANDARD IDS   */
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+/* Used in the about page for the points */
+#col-left{
+    /* M */
+    max-width:95%;
+    -ms-flex:none;
+    flex:none; 
 }
-
-#aboutNum>div{
-    width: 100%;
+#col-right{
+    /* M */
+    max-width:100%;
+    -ms-flex:none;
+    flex:none;
+    /* margin-left:10%; */
+    margin:auto;
+    padding-bottom:1rem;
 }
-
-
-#aboutNum>*>p{
-    padding: 0.5rem 0.15rem 0rem 0.15rem;
-}
-
-#aboutHero{
-    padding: 2rem !important;
-}
-#numberTitle{
-    width: 40px;
-    aspect-ratio: 1/1;
-    font-size: 1rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* Changes the color of any button to this color */
-.btn.btn-col1 {
-    background: #FADF33;
-    border-color: #FADF33;
-    color: #353238;
-}
-
-.btn.btn-col1:focus,
-.btn.btn-col1:hover {
-    background: #353238;
-    border-color: #FADF33;
-    color: #FADF33;
-}
-
-.btn.btn-col1:active,
-.btn.btn-col1.active {
-    background: #FF9D45;
-    border-color: #FF9D45;
-    color: #353238;
-}
-/* Cards */
-/* Top Card */
-#cardTop {
-    border: none !important;
-    background-color: #353238;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-bottom: 1rem ;
-    border-radius: 0;
-    color: #FADF33 !important;
-}
-#cardTop>.card-header>.card-title{
-    color: #fff;
-}
-#cardTop>hr{
-    border-top: 1px solid #FADF33 !important;
-    border-bottom: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    height: 1px;
-    width: 95%;
-    margin-top:0;
-    margin-bottom:0;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0;
-}
-#edlink>a {
-    color: #FADF33;
-}
-
-
 /* Changes the vote chip */
 #cvote>a {
-    font-family: "Archivo-Semibold";
-    color: #FADF33 !important;
+    font-family:"Archivo-Semibold";
+    color:#FADF33 !important;
 }
 #cvote>a:visited {
-    color: #EEE9D7 !important;
+    color:#EEE9D7 !important;
 }
-/* Removes the border from the editors pick */
-#cardTop {
-    border: none !important;
-    background-color: #353238;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    border-radius: 0;
-    color: #FADF33 !important;
+/* Editors Pick Card */
+#ed-pick {
+    border:none !important;
+    background-color:#353238;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+    padding-bottom:1rem ;
+    border-radius:0;
+    color:#FADF33 !important;
 }
-
-#cardTop>.card-header>.card-title{
-    color: #fff;
+#ed-pick>.card-header>.card-title{
+    color:#fff;
 }
-
-/* Disclaimer  */
-#discTitle{
-    font-family: "Archivo-ExtraBold";
-    font-size: 1rem;
-    transform: skew(-15deg);
-    padding: 0.25rem 1rem;
-    margin-top: 1.5rem;
+#ed-pick>hr{
+    border-top:1px solid #FADF33 !important;
+    border-bottom:none !important;
+    border-left:none !important;
+    border-right:none !important;
+    height:1px;
+    width:95%;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:0;
 }
-
-#discItems{
-    max-width: 90%;
-    padding: 1rem;
-}
-
-#discIcon{
-    border: 1px solid black;
-    width: 30px;
-    aspect-ratio: 1/1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5px;
-    margin-right: 5px;
-}
-#discItems>.tile{
-    margin-bottom: 0.5rem;
-}
-/* do something here test  */
 #edlink>a {
-    color: #FADF33;
+    color:#FADF33;
 }
+/* Standard Title */
+#header-big{
+    /* M */
+    margin:1.5rem 0.5rem 1.5rem 0.6rem;
+    transform:skew(-15deg);
+    font-size:1rem;
 
-/* Footer */
-#footer>*>p{
-    font-size: 14px;
 }
-#footer>*>p>a{
-    color: #FADF33;
+#header-medium{
+    /* M */
+    margin:1.5rem 0.5rem;
+    transform:skew(-15deg);
+    font-size:.85rem;
 }
-
-/* Generic changes for the pages */
-.linkchange>*>a {
-    color: #353238 !important;
-    text-decoration:underline !important;
+#header-medium>a{
+    /* Mainly for find more of my work */
+    transform: none;
+    color: #EEE9D7;
 }
-
-.link-yellow>*>a{
-    background-color: #FADF33;
-    text-transform: none;
+/* About Image */
+#img-about{
+    /* M */
+    width:300px;
+    vertical-align:middle;
+    object-fit:cover;
 }
-
 /* Makes the top bar sticky to the top */
 .p-sticky-t {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 0;
-    z-index: 10;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #353238 !important;
+    position:-webkit-sticky !important;
+    position:sticky !important;
+    top:0;
+    z-index:10;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    background-color:#353238 !important;
 }
-/* Allows for the toggling of the search bar on and off */
+/* Box used for disclaimer numbering and list points */
+#small-box{
+    width:40px;
+    aspect-ratio:1/1;
+    border-radius:.1rem;
+    font-size:1rem;
+    padding-top:.5rem;
+    padding-bottom:.5rem;
+}
+/* Search Page Bar */
+#search-bar>input{
+    border-radius:5rem 0rem 0rem 5rem;
+    border:2px solid #353238;
+    padding-left: 1rem;
+}
+#search-bar>button{
+    border-radius:0rem 5rem 5rem 0rem;
+    border:2px solid #353238;
+}
+#search-bar>input::placeholder{
+    color:#353238;
+    font-family:"Archivo-Thin";
+}
+/* Hidden Search bar on standard */
 #searchbar {
-    display: none;
-    background-color: #353238;
-    margin: 2rem 0 0 0;
+    display:none;
+    background-color:#353238;
+    margin:2rem 0 0 0;
 }
-#sbuttS{
-    visibility:visible;
-    position: absolute;
-    left: 28%;
-    top: 28%;
-}
-#sbuttX{
-    visibility:hidden;
-    position: absolute;
-    left: 28%;
-    top: 28%;
-}
-
-/* Allows for the sites to have a solid black border at the top */
-#sitegrid {
-    border-top: 2px solid black !important;
-}
-
-/* Top Search Bar */
-#sbar{
-    margin-top: 1rem !important;
-}
-
 #sbar>input {
-    width: 100% !important;
-    border-radius: 5rem 0rem 0rem 5rem;
-    border: 2px solid #FADF33;
-    background-color: #353238 ;
-    color:#FADF33;
-    padding-left: 10px;
-    padding-bottom: 0px !important;
-    padding-top: 0px !important;
-    padding-right: 0px !important;
+    width:100% !important;
+    border-radius:5rem 0rem 0rem 5rem;
+    border:2px solid #FADF33;
 }
 #sbar>input::placeholder {
     color:#FADF33;
-    font-family: "Archivo-Thin";
-}
-#sbar>input:focus {
-    color:#FADF33 !important;
+    font-family:"Archivo-Thin";
 }
 #sbar>button {
-    border-radius: 0rem 5rem 5rem 0rem;
-    text-align: center;
-    padding-left: .5rem;
-    padding-right: 0.75rem;
+    border-radius:0rem 5rem 5rem 0rem;
+    padding-left:.5rem;
+    padding-right:0.75rem;
 }
+/* Search button on the top right, changes the icon */
+#sbuttS{
+    visibility:visible;
+    position:absolute;
+    left:28%;
+    top:28%;
+}
+#sbuttX{
+    visibility:hidden;
+    position:absolute;
+    left:28%;
+    top:28%;
+}
+/* The logo / title */
 #title {
-    padding: 0;
-    line-height: 1;
-    transform: skew(-15deg);
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
+    padding:0;
+    line-height:1;
+    transform:skew(-15deg);
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
 }
-
 #title>a {
-    text-decoration: none !important;
-    color: #353238;
-    line-height: 1;
-    font-size: 25px;
-    margin: auto;
-    background-color: #FADF33;
-    padding: 0 0.5rem 0 0.5rem;
-    letter-spacing: -0.1rem;
-    vertical-align: middle;
-    
+    text-decoration:none !important;
+    color:#353238;
+    line-height:1;
+    font-size:25px;
+    margin:auto;
+    background-color:#FADF33;
+    padding:0 0.5rem 0 0.5rem;
+    letter-spacing:-0.1rem;
+    vertical-align:middle;
 }
+#tri-opt{
+    /* M */
+    max-width:100%;
+    -ms-flex:none;
+    flex:none; 
+    padding-bottom:1rem;
+}
+#work-box{
+    width:100%;
+    -ms-flex:none;
+    flex:none; 
+}
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+/* -- -- MISC   */
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 /* JS will change the text of this title. a span is hiding  */
 #titleText::after{
-    visibility: visible;
-    content: attr(data-title); 
+    visibility:visible;
+    content:attr(data-title); 
 }
-
-/* Media */
-@media screen and (min-width: 500px) {
-    #aboutTitle>h2{
-        font-family: "Archivo-ExtraBold";
-        transform: skew(-15deg);
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+/* -- -- MEDIA   */
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+@media screen and (min-width:300px) {
+    #header-big{
+        font-size:2rem;
     }
-    #aboutTitle{
-        padding-top: 1rem;
+    #header-medium{
+        font-size:1rem;
+    }
+
+}
+@media screen and (min-width:500px) {
+    #aboutTitle>h2{
+        font-family:"Archivo-SemiBold";
+        transform:skew(-15deg);
     }
     #title>a{
-        text-decoration: none !important;
-        padding: 0px;
-        line-height: 1;
-        color: #353238;
-        font-size: 40px;
-        background-color: #FADF33;
-        padding: 0 0.5rem 0 0.5rem;
-        letter-spacing: -0.1rem;
+        text-decoration:none !important;
+        padding:0px;
+        line-height:1;
+        color:#353238;
+        font-size:40px;
+        background-color:#FADF33;
+        padding:0 0.5rem 0 0.5rem;
+        letter-spacing:-0.1rem;
         }
     #discItems{
-            max-width: 80%;
-            padding: 1rem;
+            max-width:80%;
+            padding:1rem;
         }
     #sbar>button {
-        border-radius: 0rem 5rem 5rem 0rem;
-        text-align: center;
-        padding-left: 1rem;
-        padding-right: 1.25rem;
+        border-radius:0rem 5rem 5rem 0rem;
+        text-align:center;
+        padding-left:1rem;
+        padding-right:1.25rem;
         }       
 
     #footer>*>p{
-            font-size: 1rem;
+            font-size:1rem;
         }
     }
-@media screen and (min-width: 700px) {
-        #aboutNum>div{
-            width: 33.33333333% !important;
-        }
+@media screen and (min-width:700px) {
+    #col-left{
+        max-width:60%;
     }
+    #col-right{
+        max-width:40%;
+        margin:auto;
+        text-align:center;
+        padding-bottom:0rem;
+    }
+    #img-about{
+        /* M */
+        width:300px;
+        vertical-align:middle;
+        object-fit:cover;
+        
+    }
+    #tri-opt{
+        max-width:33%;
+    }
+    #work-box{
+        width:50%;
+    }
+}

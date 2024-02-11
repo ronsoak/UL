@@ -4,14 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/fonts.css' %}" />
     <link rel="stylesheet" href="{% static 'CSS/custom.css' %}" />
     <link rel="stylesheet" href="{% static 'CSS/spectre.css' %}" />
     <link rel="stylesheet" href="{% static 'CSS/spectre-icons.css' %}" />
     <link rel="stylesheet" href="{% static 'CSS/spectre-exp.css' %}" />
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <script src="{% static 'JS/searchToggle.js' %}"></script> 
     <script src="{% static 'JS/clickToggle.js' %}"></script> 
     <script src="{% static 'JS/scrolltracker.js' %}"></script> 
-    <title>reconnect</title>
+    <title>RECONNECT</title>
     <link rel="stylesheet" href="" />
   </head>
   <!-- Variables -->
@@ -27,7 +29,7 @@
             <a
               href="#"
               id="droplink"
-              class="btn btn-action btn-lg dropdown-toggle btn-col1"
+              class="btn btn-action btn-lg dropdown-toggle btn-primary"
               tabindex="0"
               onclick="clickToggle()"
               ><i class="icon icon-menu"></i
@@ -44,7 +46,7 @@
             <a id="titleText" href="/"><span id="t1">RECONNECT</span></a>
         </div>
         <div class="column col-2 p-relative">
-          <button onclick="searchToggle()" id="slink" class="btn btn-lg btn-action float-right btn-col1 p-relative"><i id="sbuttS" class="icon icon-search"></i><i id="sbuttX" class="icon icon-arrow-up"></i></button>
+          <button onclick="searchToggle()" id="slink" class="btn btn-lg btn-action float-right btn-primary p-relative"><i id="sbuttS" class="icon icon-search"></i><i id="sbuttX" class="icon icon-arrow-up"></i></button>
         </div>
       </div>
     </div>
@@ -54,12 +56,12 @@
           <div id="sbar" class="input-group px-2">
             {% csrf_token %}
             <input
-              class="input-group"
+              class="input-group bg-dark"
               type="text"
               placeholder="Enter keywords here..."
               name="Search Terms"
             />
-            <button class="btn btn-col1 input-group-btn" type="submit"><i class="icon icon-search"></i></button>
+            <button class="btn btn-primary input-group-btn text-center m-a" type="submit"><i class="icon icon-search"></i></button>
           </div>
         </form>
       </div>
@@ -67,10 +69,10 @@
     <!-- Content -->
     {% block content %} {% endblock %}
     <!-- Footer -->
-    <div class="container grid-lg mt-2">
-        <div id="footer" class="columns text-center p-2 bg-dark">
+    <div class="container grid-lg mt-2 p-0">
+        <div id="footer" class="columns p-2 bg-dark">
             <div class="column col-1"></div>
-            <div class="column col-10 text-center text-primary p-2"><p class="p-0 m-0">This site is an <a href="https://linktr.ee/antranaut"> Alex Antra </a> product, design by <a href="http://micahtabak.myportfolio.com/"> Micah Tabak </a>.</p></div>
+            <div class="column col-10"></div>
             <div class="column col-1"></div>
     </div>
   </body>

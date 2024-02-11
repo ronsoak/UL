@@ -1,235 +1,298 @@
 {% extends "standard.html" %} {% block content %}{% load static %}
 <div class="container grid-lg p-0">
-  <div id="cardTop" class="card">
-    <div class="card-header">
-      <div class="card-title h1">About</div>
-    </div>
-    <div class="card-body pt-2">
-      <p>
-        This site is dedicated to connecting those who write about video games,
-        the games industry, and game development with more readers.
-      </p>
-    </div>
+  <!-- Page Title -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div id="header-big">
+    <span class="bg-yellow fnt-extra px-1r">About</span>
   </div>
-</div>
-<!-- Blurb -->
-<!-- Industry in decline -->
-<div class="container grid-lg p-0">
-  <div id="aboutBox" class="columns m-0">
-    <div id="aboutTitle" class="column col-8">
-      <h2><span class="bg-yellow p-2">An industry in decline</span></h2>
-      <p>
+  <!-- hero -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="bg-yellow text-center fnt-i-semi p-2r fnt-1r">
+    <span>
+      This site is dedicated to connecting those who write about video games,
+      the games industry, and game development with more readers. It is my way
+      of giving back to the community of writers whose words have moved me,
+      educated me, and delighted me over the past few years, and hopefully many
+      more years to come.
+    </span>
+  </div>
+  <!-- Industry in decline -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="columns my-1r">
+    <!-- Left Col -->
+    <div id="col-left" class="column pl-1hr">
+      <div id="header-medium">
+        <span class="bg-yellow fnt-extra p-2">An industry in decline</span>
+      </div>
+      <span>
         Over the past few years we’ve seen a systemic undervaluing in editorial
         content. Many of the industries outlets have been shuttered whilst those
         that remain, only remain in business by creating mass-produced SEO
         friendly content.
-      </p>
-      <p>
+        <br /><br />
         I’ve watched as many of my favorite writers have lost their jobs, or
         have been pushed into non-writing roles just to stay in the industry
         they love. However, the editorial content is still being made, it’s just
         not coming from large corporate owned sites.
-      </p>
+      </span>
     </div>
-    <div id="aboutImage" class="column col-auto">
-      <img src="{% static '/images/graph.png'  %}" />
+    <!-- Right Col -->
+    <div id="col-right" class="column">
+      <img id="img-about" src="{% static '/images/decline.png' %}" />
     </div>
   </div>
-  <!-- Where are they now?  -->
-  <div id="aboutBox" class="columns m-0 bg-yellow">
-    <div id="aboutTitle" class="column col-8">
-      <h2><span class="bg-dark p-2">Where are they now?</span></h2>
-      <p>
+  <!-- Where are they now? -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="columns my-1r bg-yellow">
+    <!-- Left Col -->
+    <div id="col-left" class="column pl-1hr">
+      <div id="header-medium">
+        <span class="bg-dark fnt-extra p-2">Where are they now?</span>
+      </div>
+      <span>
         Many of our industries best writers now have blogs, patreon's, and
         substack’s. Some write for free, whilst others need crowd funding to pay
         the bills.
-      </p>
-      <p>
+        <br /><br />
         Meanwhile, up-and-coming writers no longer have a pathway into a viable
         career. These writers are left either penning their own blog on the side
         just to keep their passion going, or submitting their work to volunteer
         driven sites.
-      </p>
+      </span>
     </div>
-    <div id="aboutImage" class="column col-auto">
-      <img src="{% static '/images/search.png'  %}" />
+    <!-- Right Col -->
+    <div id="col-right" class="column pt-2r">
+      <img id="img-about" src="{% static '/images/where.png' %}" />
     </div>
   </div>
-  <!-- A new problem -->
-  <div id="aboutBox" class="columns m-0">
-    <div id="aboutTitle" class="column col-8">
-      <h2><span class="bg-yellow p-2">A new problem</span></h2>
-      <p>The problem surrounding all of these amazing writers is, discovery.</p>
-      <p>
+  <!-- A new problem -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="columns my-1r">
+    <!-- Left Col -->
+    <div id="col-left" class="column pl-1hr">
+      <div id="header-medium">
+        <span class="bg-yellow fnt-extra p-2">A new problem</span>
+      </div>
+      <span>
+        The problem surrounding all of these amazing writers is, discovery.
+        <br /><br />
         Alongside the crash of games writing, is also the crash of the
         traditional social media channels that used to be a reliable driver for
         discovering great pieces of writing.
-      </p>
+      </span>
     </div>
-    <div id="aboutImage" class="column col-auto">
-      <img src="{% static '/images/tweet.png'  %}" />
+    <!-- Right Col -->
+    <div id="col-right" class="column">
+      <img id="img-about" src="{% static '/images/problem.png' %}" />
     </div>
   </div>
-  <!-- Purpose -->
-  <div id="aboutBox" class="columns m-0 bg-yellow">
-    <div id="aboutlast" class="column col-8">
-      <h2><span class="bg-dark p-2">Reconnect’s Purpose</span></h2>
-      <p>
+  <!-- Purpose -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="columns mt-1r pb-1r bg-yellow">
+    <!-- Left Col -->
+    <div id="col-left" class="column pl-1hr">
+      <div id="header-medium">
+        <span class="bg-dark fnt-extra p-2">Reconnect's purpose</span>
+      </div>
+      <span>
         I made this site so that I can rectify this shift and reconnect the
         industries best writers with the readers who are interested in this
         content.
-      </p>
+      </span>
     </div>
+    <!-- Right Col -->
+    <div id="col-right" class="column"></div>
   </div>
-  <div id="aboutNum" class="columns m-0 bg-yellow">
-    <div id="" class="column col-4 p-2">
-      <div id="numberTitle"  class="s-rounded bg-dark text-primary">1</div>
-      <p>
+  <!-- Three Points -->
+  <div class="columns mb-2r px-1r pb-1r bg-yellow">
+    <div id="tri-opt" class="column">
+      <div id="small-box" class="bg-dark mb-hr text-center fnt-bold">1</div>
+      <span>
         I want those who rely on crowdfunding to be given the opportunity to
         prove to a new audience why their work is worth the small amount of
         money that they are asking for.
-      </p>
+      </span>
     </div>
-    <div id="" class="column col-4 p-2">
-      <div id="numberTitle"  class="s-rounded bg-dark text-primary">2</div>
-      <p>
+    <div id="tri-opt" class="column">
+      <div id="small-box" class="bg-dark mb-hr text-center fnt-bold">2</div>
+      <span>
         I want more people to be able to read what our greatest writers have to
         say as they often are key drivers in shaping and improving the culture
         and education of our industry.
-      </p>
+      </span>
     </div>
-    <div id="" class="column col-4 p-2">
-      <div id="numberTitle" class="s-rounded bg-dark">3</div>
-      <p>
-        Lastly, I want those up-and-coming writers to be able to get a chance to
-        show off their work to a bigger audience, hopefully enabling them to
-        grow their writing into whatever direction helps them meet their goals.
-      </p>
-    </div>
-  </div>
-  <!-- hero -->
-  <div class="hero hero-sm bg-dark">
-    <div id="aboutHero" class="hero-body text-primary">
-      <h3>
-        This site is my way of giving back to the community of writers whose
-        words have moved me, educated me, and delighted me over the past few
-        years, and hopefully many more years to come.
-      </h3>
+    <div id="tri-opt" class="column">
+      <div id="small-box" class="bg-dark mb-hr text-center fnt-bold">3</div>
+      <span>
+        I want those up-and-coming writers to be able to get a chance to show
+        off their work to a bigger audience, hopefully enabling them to grow
+        their writing into whatever direction helps them meet their goals.
+      </span>
     </div>
   </div>
-</div>
-<!-- Disclaimer -->
-<div class="container grid-lg p-0 p-relative">
-    <div id="discTitle"><h2><span class="bg-yellow p-2">Disclaimer</span></h2></div>
-    <div id="discItems">
-        <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content">
-              <p>
-                Whilst I take no responsibility for the content of the work that is
-                linked here, I am a queer gender-diverse person who has zero tolerance
-                for hate speech and content that harms minority groups.
-              </p>
-            </div>
-          </div>
-          <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content">
-              <p>
-                In the scenario I deem an article to be inappropriate for this site and
-                it's readers I will remove it, continued publishing of harmful content
-                may result in the site being removed from this site.
-              </p>
-            </div>
-          </div>
-          <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content">
-              <p>
-                I will also periodically review the sources for
-                appropriateness and may remove them if I feel they no longer meet the
-                ethos of the site, i.e becoming less editorial.
-              </p>
-            </div>
-          </div>
-          <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content">
-              <p>
-                From time to time, especially in the case of a personal blog or a mixed
-                media site, an article may not be thematically appropriate, for example
-                some Gaming sites also write about tech and pop culture.
-              </p>
-            </div>
-          </div>
-          <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content linkchange">
-              <p>
-                You can make a request to have your site added by filling out the form
-                on the <a href="/sites">Sites page</a>. Please ensure you read the
-                submission rules before submitting and reach out if you have
-                any questions. I'll attempt to evaluate new requests in a timely manner.
-              </p>
-            </div>
-          </div>
-          <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content">
-              <p>
-                Content is loaded in using RSS, changes to RSS feeds may result in
-                articles not being loaded to the site and I will attempt to resolve
-                those issues, but with no promises of a full resolution.
-              </p>
-            </div>
-          </div>
-          <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content">
-              <p>
-                Due to the aforementioned way of loading information (RSS), changes to
-                the title of an article post loading are not possible, and while I have
-                systematic ways of preventing duplication, it cannot always be avoided.
-              </p>
-            </div>
-          </div>
-          <div class="tile">
-            <div id="discIcon" class="tile-icon bg-dark">
-              <i class="icon icon-check text-primary"></i>
-            </div>
-            <div class="tile-content">
-              <p>
-                This site is a passion project and so regular updates are not promised.
-              </p>
-            </div>
-          </div>
+  <!-- Disclaimer -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div id="header-big" class="mb-2r">
+    <span class="bg-yellow fnt-extra p-2">Disclaimer</span>
+  </div>
+  <!-- Disc Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
     </div>
-</div>
-
-  <!-- Contact Me -->
-  <div class="container grid-lg p-0 p-relative">
-  <div id="discTitle"><h2><span class="bg-yellow p-2">Contact Me</span></h2></div>
-  <div id="discItems">
-  <p>
-    If you want to get in contact about any questions, concerns, or want to
-    share some good vibes, please fill in the form below.
-  </p>
-</div>
-  <div class="container clearfix d-block">
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        Whilst I take no responsibility for the content of the work that is
+        linked here, I am a queer gender-diverse person who has zero tolerance
+        for hate speech and content that harms minority groups.
+      </span>
+    </div>
+  </div>
+  <!-- Disc Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
+    </div>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        In the scenario I deem an article to be inappropriate for this site and
+        it's readers I will remove it, continued publishing of harmful content
+        may result in the site being removed from this site.
+      </span>
+    </div>
+  </div>
+  <!-- Disc Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
+    </div>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        I will also periodically review the sources for appropriateness and may
+        remove them if I feel they no longer meet the ethos of the site, i.e
+        becoming less editorial.
+      </span>
+    </div>
+  </div>
+  <!-- Disc Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
+    </div>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        From time to time, especially in the case of a personal blog or a mixed
+        media site, an article may not be thematically appropriate, for example
+        some Gaming sites also write about tech and pop culture.
+      </span>
+    </div>
+  </div>
+  <!-- Disc Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
+    </div>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        You can make a request to have your site added by filling out the form
+        on the <a href="/sites">Sites page</a>. Please ensure you read the
+        submission rules before submitting and reach out if you have any
+        questions. I'll attempt to evaluate new requests in a timely manner.
+      </span>
+    </div>
+  </div>
+  <!-- Disc Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
+    </div>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        Content is loaded in using RSS, changes to RSS feeds may result in
+        articles not being loaded to the site and I will attempt to resolve
+        those issues, but with no promises of a full resolution.
+      </span>
+    </div>
+  </div>
+  <!-- Disc Point -->
+  <div class="columns mt-1r">
+    <!-- Left Col -->
+    <div class="column pl-1r w60 col-auto mr-1r">
+      <div id="small-box" class="bg-dark text-center">
+        <i class="icon icon-arrow-right text-primary"></i>
+      </div>
+    </div>
+    <!-- Right Col -->
+    <div class="column col-9">
+      <span>
+        Due to the aforementioned way of loading information (RSS), changes to
+        the title of an article post loading are not possible, and while I have
+        systematic ways of preventing duplication, it cannot always be avoided.
+      </span>
+    </div>
+  </div>
+  <!-- Find more of our work -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="columns mt-2r mb-2r">
+    <div id="work-box" class="column bg-yellow p-1r">
+      <h2>Micah Tabak</h2>
+      <span>
+        Consequuntur quaerat enim ut reiciendis. Vero porro eos saepe doloremque
+        sit. Eum quod optio ad culpa vero dolorem at iusto. Minus tempore ut aut
+        impedit nobis et. Sunt et modi aut ea voluptatem labore quam cupiditate.
+      </span>
+      <div id="header-medium">
+        <a
+          href="https://l.facebook.com/l.php?u=https%3A%2F%2Fsamuelgerardtabak.myportfolio.com%2F%3Ffbclid%3DIwAR0RAeG3TWI2dYw9t_r63SfxUpwGif91rE-065NiJxek9861g_Yx4JAEnYE&h=AT0ptTF0h5TA6boSgLuGbztTDrl61mK0OcjHkedl6Pn0kliJQ9WeWjr2vVia9X-un01Ntv1HALTd33qlCRNv6ipGvLA5_VgWeie927SrO3oS3N6FYeqeIjcuNk5EtImKw1IlJG9S"
+          target="_blank"
+          ><span class="bg-dark fnt-extra p-2">Find more of my work</span></a
+        >
+      </div>
+    </div>
+    <div id="work-box" class="column bg-dark p-1r">
+      <h2>Alex Antra</h2>
+      <span>
+        Consequuntur quaerat enim ut reiciendis. Vero porro eos saepe doloremque
+        sit. Eum quod optio ad culpa vero dolorem at iusto. Minus tempore ut aut
+        impedit nobis et. Sunt et modi aut ea voluptatem labore quam cupiditate.
+      </span>
+      <div id="header-medium">
+        <a href="https://linktr.ee/antranaut" target="_blank"
+          ><span class="bg-yellow fnt-extra p-2 text-dark"
+            >Find more of my work</span
+          ></a
+        >
+      </div>
+    </div>
+  </div>
+  <!-- Contact Me -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div id="header-big" class="mb-1r">
+    <span class="bg-yellow fnt-extra p-2">Contact</span>
+  </div>
+  <div class="p-1r">
+    <span>
+      If you want to get in contact about any questions, concerns, or want to
+      share some good vibes, please fill in the form below.
+    </span>
+  </div>
+  <!-- Contact Form -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="container clearfix d-block mb-2r">
     <div class="container grid-xs float-left p-0">
       <!-- Form submission Toast -->
       {% if fvalid == 1 %}
@@ -285,10 +348,11 @@
             id="id_contact_notes"
           ></textarea>
         </div>
-        <input class="btn btn-col1 m-2" type="submit" value="Submit" />
+        <input class="btn btn-primary m-2" type="submit" value="Submit" />
       </form>
     </div>
     <div class="clearfix"></div>
   </div>
+
+  {% endblock %}
 </div>
-{% endblock %}

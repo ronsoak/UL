@@ -1,36 +1,42 @@
 {% extends "standard.html" %} {% block content %}
 <div class="container grid-lg p-0">
-  <div id="cardTop" class="card">
-    <div class="card-header">
-      <div class="card-title h1">Search</div>
+<!-- Page Title -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+    <div id="header-big">
+        <span class="bg-yellow fnt-extra px-1r">Search</span>
     </div>
-    <div class="card-body pt-2">
-      <p>
+<!-- Search Text -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<div class="px-1r">
+    <span>
         Search across all the articles or sites that we have. Simply enter your
         keywords in the search box below and it will return any articles
         matching those terms and / or the articles of the sites matching those
         terms.
-      </p>
+    </span>
+</div>
+</div>
+<!-- Search Bar  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<div class="container grid-lg p-0">
+    <!-- Form -->
+    <div class="container px-0 pb-2 mb-2">
+      <form action="{% url 'search' %}" method="POST">
+        <div id="search-bar" class="input-group p-1r">
+          {% csrf_token %}
+          <input
+            class="input-group col-12"
+            type="text"
+            placeholder="Please enter your search…"
+            name="Search Terms"
+          />
+          <button class="btn btn-secondary input-group-btn text-center m-a pl-1r pr-1hr" type="submit">
+            <i class="icon icon-search"></i>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
-  <!-- Form -->
-  <div class="container px-0 pb-2 mb-2">
-    <form action="{% url 'search' %}" method="POST">
-      <div id="sbar" class="input-group">
-        {% csrf_token %}
-        <input
-          class="input-group"
-          type="text"
-          placeholder="Please enter your search…"
-          name="Search Terms"
-        />
-        <button class="btn btn-col1 input-group-btn" type="submit">
-          <i class="icon icon-search"></i>
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
+<!-- Results --  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+
 <!-- Search Results -->
 <div class="container grid-lg">
   <h2>Results</h2>
