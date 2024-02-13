@@ -91,12 +91,11 @@
 /* -- -- Colors       */
 /* -- -- -- -- -- --  */
 .text-dark{ color:#353238     !important;}
+.tdn{ text-decoration: none     !important;}
 /* -- -- -- -- -- --  */
 /* -- -- Borders      */
 /* -- -- -- -- -- --  */
 .bt-2{border-top:2px solid black !important;}
-
-
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 /* -- -- STANDARD IDS   */
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
@@ -166,11 +165,6 @@
     margin:1.5rem 0.5rem;
     transform:skew(-15deg);
     font-size:.85rem;
-}
-#header-medium>a{
-    /* Mainly for find more of my work */
-    transform: none;
-    color: #EEE9D7;
 }
 /* About Image */
 #img-about{
@@ -265,6 +259,11 @@
     letter-spacing:-0.1rem;
     vertical-align:middle;
 }
+/* JS will change the text of this title. a span is hiding  */
+#titleText::after{
+    visibility:visible;
+    content:attr(data-title); 
+}
 #tri-opt{
     /* M */
     max-width:100%;
@@ -276,14 +275,6 @@
     width:100%;
     -ms-flex:none;
     flex:none; 
-}
-/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
-/* -- -- MISC   */
-/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
-/* JS will change the text of this title. a span is hiding  */
-#titleText::after{
-    visibility:visible;
-    content:attr(data-title); 
 }
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 /* -- -- MEDIA   */
