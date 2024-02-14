@@ -13,4 +13,6 @@ urlpatterns = [
     #function urls
     path('itemclicked/<item_uid>/',views.ItemClicked,name='itemclicked'),
     path('upvote/<item_uid>/',views.ItemUpvote,name='upvote'),
+    path('feature/<item_uid>/',views.ItemFeatured,name='feature'),
+    path('hide/<item_uid>/',views.ItemHidden,name='hide')
 ]

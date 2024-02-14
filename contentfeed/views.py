@@ -104,6 +104,24 @@ def ItemUpvote(request,item_uid):
     VoteForItem(item_uid,session_id)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+def ItemFeatured(request,item_uid):
+    if request.user.is_authenticated: 
+        c = ContentItem.objects.get(item_id = item_uid)
+        c.item_curated = True 
+        c.save()
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else: 
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    
+def ItemHidden(request,item_uid):
+    if request.user.is_authenticated: 
+        c = ContentItem.objects.get(item_id = item_uid)
+        c.item_hidden = True 
+        c.save()
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else: 
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 
 def VoteForItem(item_uid,session_id):
     c = ContentItem.objects.get(item_id = item_uid)
