@@ -22,8 +22,10 @@ from jsl_django_sitemap.views import sitemaps
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls), #change this on deployment 
+    path('admin/', admin.site.urls),
     path('',include('contentfeed.urls')),
+
+    # Extras 
     path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
