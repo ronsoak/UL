@@ -292,7 +292,7 @@ body {
   background: #fff;
   /* color: #3b4351; */
   color:#20292C;
-  font-family: "Archivo-Regular",-apple-system, system-ui, BlinkMacSystemFont,"Open Sans", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Archivo-Regular",Archivo-Regular,-apple-system, system-ui, BlinkMacSystemFont,"Open Sans", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: .9rem;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
