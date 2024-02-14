@@ -19,6 +19,8 @@ from django.urls import include, path
 from django.views.generic.base import TemplateView 
 from django.contrib.sitemaps.views import sitemap
 from jsl_django_sitemap.views import sitemaps
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
@@ -26,6 +28,11 @@ urlpatterns = [
     path('',include('contentfeed.urls')),
 
     # Extras 
-    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
+    path("site.webmanifest",TemplateView.as_view(template_name="site.webmanifest", content_type="text/plain"),),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico'))),
+    path('favicon-16x16.png', RedirectView.as_view(url=staticfiles_storage.url('images/favicon-16x16.png'))),
+    path('favicon-32x32.png', RedirectView.as_view(url=staticfiles_storage.url('images/favicon-32x32.png'))),
+    path('apple-touch-icon.png', RedirectView.as_view(url=staticfiles_storage.url('images/apple-touch-icon.png'))),
 ]
