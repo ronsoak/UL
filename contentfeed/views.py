@@ -7,6 +7,7 @@ from contentfeed.models import ContentItem, Publications, Votes
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.db.models import Q
+from django.core.mail import send_mail
 
 # -- -- -- -- -- -- PAGE RENDERERS -- -- -- -- -- -- -- #
 # About Page
@@ -17,6 +18,11 @@ def about(request):
         if cform.is_valid():
             cform.save()
             f_valid = 1
+            subject = '[Reconnect] New Contact Request'
+            message = 'Please log into the site to see the new contact request'
+            from_email = 'christian_a_young@icloud.com'
+            recipient_list = ['alex@antranaut.com']
+            send_mail(subject, message, from_email, recipient_list)
             cform = NewContactForm()
             return render(request,'about.html', context={"fvalid":f_valid})
         else:
@@ -70,6 +76,12 @@ def sites(request):
         if sform.is_valid():
             sform.save()
             f_valid = 1
+            # email stuff 
+            subject = '[Reconnect] New Pub Request'
+            message = 'Please log into the site to see the new pub request'
+            from_email = 'christian_a_young@icloud.com'
+            recipient_list = ['alex@antranaut.com']
+            send_mail(subject, message, from_email, recipient_list)
             sform = NewSourceForm()
             return render(request, 'sites.html',context={"NewSourceRequest": sform,"publications":pub_query,"fvalid":f_valid})
         else:
