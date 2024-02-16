@@ -97,6 +97,19 @@
 /* -- -- Borders      */
 /* -- -- -- -- -- --  */
 .bt-2{border-top:2px solid black !important;}
+/* -- -- -- -- -- --  */
+/* -- -- Position     */
+/* -- -- -- -- -- --  */
+/* Makes the top bar sticky to the top */
+.p-sticky-t {
+    position:-webkit-sticky !important;
+    position:sticky !important;
+    top:0;
+    z-index:10;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    background-color:#353238 !important;
+}
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 /* -- -- STANDARD IDS   */
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
@@ -155,17 +168,15 @@
 }
 /* Standard Title */
 #header-big{
-    /* M */
     margin:1.5rem 0.5rem 1.5rem 0.6rem;
     transform:skew(-15deg);
-    font-size:1rem;
+    font-size: 1rem;
 
 }
 #header-medium{
-    /* M */
     margin:1.5rem 0.5rem;
     transform:skew(-15deg);
-    font-size:.85rem;
+    font-size: 0.85rem;
 }
 /* About Image */
 #img-about{
@@ -173,16 +184,6 @@
     width:300px;
     vertical-align:middle;
     object-fit:cover;
-}
-/* Makes the top bar sticky to the top */
-.p-sticky-t {
-    position:-webkit-sticky !important;
-    position:sticky !important;
-    top:0;
-    z-index:10;
-    padding-top:1rem;
-    padding-bottom:1rem;
-    background-color:#353238 !important;
 }
 /* Box used for disclaimer numbering and list points */
 #small-box{
@@ -217,6 +218,7 @@
     width:100% !important;
     border-radius:5rem 0rem 0rem 5rem;
     border:2px solid #FADF33;
+    padding-left:1rem;
 }
 #sbar>input::placeholder {
     color:#FADF33;
@@ -248,12 +250,14 @@
     display:flex;
     align-items:stretch;
     justify-content:center;
+    max-height: 40px;
 }
 #title>a {
+    /* M */
     text-decoration:none !important;
     color:#353238;
-    line-height:1;
-    font-size:25px;
+    line-height:1; 
+    font-size: 1.2rem;
     margin:auto;
     background-color:#FADF33;
     padding:0 0.5rem 0 0.5rem;
@@ -280,66 +284,46 @@
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 /* -- -- MEDIA   */
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
-@media screen and (min-width:300px) {
-    #header-big{
-        font-size:2rem;
-    }
-    #header-medium{
-        font-size:1rem;
-    }
-
+/* /* Small devices such as large phones (640px and up)* */
+@media only screen and (min-width: 40em) {
+        #col-left{
+            max-width:60%;
+        }
+        #col-right{
+            max-width:40%;
+            margin:auto;
+            text-align:center;
+            padding-bottom:0rem;
+        }
+        #header-big{
+            font-size: 2rem;
+        }
+        #header-medium{
+            font-size: 1.1rem;
+        }
+        #img-about{
+            /* M */
+            width:300px;
+            vertical-align:middle;
+            object-fit:cover;
+            
+        }
+        #title>a{
+            font-size:40px;
+            } 
+        #tri-opt{
+            max-width:33%;
+        }
+        #work-box{
+            width:50%;
+        }
 }
-@media screen and (min-width:500px) {
-    #aboutTitle>h2{
-        font-family:"Archivo-SemiBold";
-        transform:skew(-15deg);
-    }
-    #title>a{
-        text-decoration:none !important;
-        padding:0px;
-        line-height:1;
-        color:#353238;
-        font-size:40px;
-        background-color:#FADF33;
-        padding:0 0.5rem 0 0.5rem;
-        letter-spacing:-0.1rem;
-        }
-    #discItems{
-            max-width:80%;
-            padding:1rem;
-        }
-    #sbar>button {
-        border-radius:0rem 5rem 5rem 0rem;
-        text-align:center;
-        padding-left:1rem;
-        padding-right:1.25rem;
-        }       
 
-    #footer>*>p{
-            font-size:1rem;
-        }
-    }
-@media screen and (min-width:700px) {
-    #col-left{
-        max-width:60%;
-    }
-    #col-right{
-        max-width:40%;
-        margin:auto;
-        text-align:center;
-        padding-bottom:0rem;
-    }
-    #img-about{
-        /* M */
-        width:300px;
-        vertical-align:middle;
-        object-fit:cover;
-        
-    }
-    #tri-opt{
-        max-width:33%;
-    }
-    #work-box{
-        width:50%;
-    }
-}
+/* Medium devices such as tablets (768px and up) */
+/* @media only screen and (min-width: 48em) {...} */
+
+/* Large devices such as laptops (1024px and up) */
+/* @media only screen and (min-width: 64em) {...} */
+
+/* Largest devices such as desktops (1280px and up) */
+/* @media only screen and (min-width: 80em) {...} */ 
