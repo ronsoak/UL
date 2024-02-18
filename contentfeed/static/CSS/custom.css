@@ -136,10 +136,6 @@
     color:#FADF33 !important;
     border: 1px solid #353238 !important;
 }
-#cvote>a:visited {
-    color:#EEE9D7 !important;
-}
-
 #cvote:hover{
     border-color: #FADF33 !important;
     border-width: 2px !important;
