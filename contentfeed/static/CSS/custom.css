@@ -131,13 +131,37 @@
     padding-bottom:1rem;
 }
 /* Changes the vote chip */
-#cvote>a {
+#cvote {
     font-family:"Archivo-Semibold";
     color:#FADF33 !important;
+    border: 1px solid #353238 !important;
 }
 #cvote>a:visited {
     color:#EEE9D7 !important;
 }
+
+#cvote:hover{
+    border-color: #FADF33 !important;
+    border-width: 2px !important;
+    font-family: Archivo-Bold,"Archivo-Bold"  !important;
+}
+#cvote.btn:active{
+    background-color: #FADF33 !important;
+    color: #353238 !important;
+    font-family: Archivo-Bold,"Archivo-Bold"  !important;
+    border: 1px solid #353238 !important;
+}
+#cvote.btn:focus{
+    background-color: #FADF33 !important;
+    color: #353238 !important;
+    font-family: Archivo-Bold,"Archivo-Bold"  !important;
+    border: 1px solid #353238 !important;
+    box-shadow: none !important;
+}
+#cvote.btn:focus::after{
+    content: "d!";
+}
+
 /* Editors Pick Card */
 #ed-pick {
     border:none !important;
