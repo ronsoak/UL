@@ -50,12 +50,16 @@
                 {% endif %}
             {% endif %}
             <div class="tile-content">
-                <div class="pb-1"><a href="/itemclicked/{{i.item_id}}" target="_blank">{{i.item_title}}</a></div>
-                <div><span id="cvote" class="chip bg-dark mr-2"><a class="tdn" href="upvote/{{i.item_id}}">Vote</a></span><span class="chip"><a class="tdn" href="/sites">{{i.item_source}}</a></span>
-                <!-- Admin only button to feature article -->
+                <div class="pb-1"><a href="{{i.item_url}}" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')" target="_blank">{{i.item_title}}</a></div>
+                <div>
+                    <button id="cvote" class="btn chip bg-dark mr-2" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')"><span>Vote</span></button>
+                    <span class="chip"><a class="tdn" href="/sites">{{i.item_source}}</a></span>
+                    
+                    <!-- Admin only buttons -->
                 {% if user.is_authenticated %}
                 <span class="chip bg-orange"><a class="tdn" href="feature/{{i.item_id}}">Feature</a></span>
                 <span class="chip bg-orange"><a class="tdn" href="hide/{{i.item_id}}">Hide</a></span>
+                
                 {% endif %}
                 </div>
             </div>

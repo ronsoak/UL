@@ -87,6 +87,7 @@
 /* -- -- Sizing       */
 /* -- -- -- -- -- --  */
 .w60{   width:60px              !important;}
+.h250{  min-height: 250px       !important;}
 /* -- -- -- -- -- --  */
 /* -- -- Colors       */
 /* -- -- -- -- -- --  */
