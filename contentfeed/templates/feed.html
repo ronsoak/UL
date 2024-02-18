@@ -11,7 +11,7 @@
         </div>
         <div class="card-body pt-2">
             {% for c in curated_items %}
-            <div id="edlink" class="pb-2"><a href="/itemclicked/{{c.item_id}}" class="vote-link" target="_blank">{{c.item_title}}</a></div>
+            <div id="edlink" class="pb-2"><a href="{{c.item_url}}" onclick="upvote('{{c.item_id}}','{{session_id}}','{{ csrf_token }}')" class="vote-link" target="_blank">{{c.item_title}}</a></div>
             <div class="mb-2"><span id="edchip" class="chip bg-yellow">{{c.item_source}}</span></div>
             {% empty %}
             <p>No items to display</p>

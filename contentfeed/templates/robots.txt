@@ -1,12 +1,40 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Disallow: /wp-includes/wlwmanifest.xml
-Disallow: */wp-includes/wlwmanifest.xml
+Disallow: /wp-includes/*
+Disallow: */wp-includes/
 Disallow: /wordpress/
 Disallow: /.git/
 Disallow: /blogsite/
 Disallow: /wp-content/
+Disallow: /xmlrpc.php
+Disallow: /blog/*
+Disallow: /news/*
+Disallow: /test/*
+
+
+
 User-agent: GPTBot
 Disallow: /
 Sitemap: https://www.reconnect.quest/sitemap.xml
+
+
+
+
+/wp-includes/wlwmanifest.xml
+
+2024-02-18 17:44:13,623: Not Found: /web/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:13,869: Not Found: /wordpress/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:14,134: Not Found: /website/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:14,376: Not Found: /wp/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:14,621: Not Found: /news/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:14,866: Not Found: /2018/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:15,116: Not Found: /2019/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:15,357: Not Found: /shop/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:15,626: Not Found: /wp1/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:15,868: Not Found: /test/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:16,109: Not Found: /media/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:16,356: Not Found: /wp2/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:16,607: Not Found: /site/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:16,849: Not Found: /cms/wp-includes/wlwmanifest.xml
+2024-02-18 17:44:17,094: Not Found: /sito/wp-includes/wlwmanifest.xml
