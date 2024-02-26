@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 
 class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any):
-        test_url = 'https://alexantra.bearblog.dev/feed/?type=rss'
+        test_url = 'https://www.startmenu.co.uk/home?format=rss'
         r_check = 1
         try:
             r_content = feedparser.parse(test_url)

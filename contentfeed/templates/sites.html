@@ -13,6 +13,13 @@
     </span>
   </div>
   <!-- Site List -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+  <div class="accordion pt-1r">
+    <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
+    <label class="accordion-header px-1r" for="accordion-1">
+      <i class="icon icon-arrow-right mr-1"></i>
+      Click here to expand the list of sites.
+    </label>
+    <div class="accordion-body">
   <!--  Site List-->
   <div class="columns mt-2r">
     {% for p in publications %}
@@ -33,7 +40,8 @@
     </div>
     {% endfor %}
   </div>
-
+</div>
+</div>
   <!-- Rules -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
   <div id="header-medium" class="mb-2r">
     <span class="bg-yellow fnt-extra p-2">Site Request Rules</span>
