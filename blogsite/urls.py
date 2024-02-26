@@ -24,7 +24,7 @@ from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('bridge/', admin.site.urls),
     path('',include('contentfeed.urls')),
     # Extras 
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),

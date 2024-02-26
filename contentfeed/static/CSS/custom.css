@@ -12,23 +12,23 @@
 /* -- -- -- -- -- --  */
 /* -- -- FONTS */
 /* -- -- -- -- -- -- */
-.fnt-thin{      font-family:Archivo-Thin,"Archivo-Thin"                         !important;}
-.fnt-i-thin{    font-family:Archivo-ThinItalic,"Archivo-ThinItalic"             !important;}
-.fnt-extraL{    font-family:Archivo-ExtraLight,"Archivo-ExtraLight"             !important;}
-.fnt-i-extraL{  font-family:Archivo-ExtraLightItalic,"Archivo-ExtraLightItalic" !important;}
-.fnt-light{     font-family:Archivo-Light,"Archivo-Light"                       !important;}
-.fnt-i-light{   font-family:Archivo-LightItalic,"Archivo-LightItalic"           !important;}
-.fnt-reg{       font-family:Archivo-Regular,"Archivo-Regular"                   !important;}
-.fnt-i-reg{     font-family:Archivo-Italic,"Archivo-Italic"                     !important;}
-.fnt-med{       font-family:Archivo-Medium,"Archivo-Medium"                     !important;}
-.fnt-i-med{     font-family:Archivo-MediumItalic,"Archivo-MediumItalic"         !important;}
-.fnt-semi{      font-family:Archivo-SemiBold,"Archivo-SemiBold"                 !important;}
-.fnt-i-semi{    font-family:Archivo-SemiBoldItalic,"Archivo-SemiBoldItalic"     !important;}
-.fnt-bold{      font-family:Archivo-Bold,"Archivo-Bold"                         !important;}
-.fnt-i-bold{    font-family:Archivo-BoldItalic,"Archivo-BoldItalic"             !important;}
-.fnt-extra{     font-family:Archivo-ExtraBold,"Archivo-ExtraBold"               !important;}
-.fnt-i-extra{   font-family:Archivo-ExtraBoldItalic,"Archivo-ExtraBoldItalic"   !important;}
-.fnt-black{     font-family:Archivo-Black,"Archivo-Black"                       !important;}
+.fnt-thin{      font-family:Archivo-Thin,"Archivo-Thin"                         !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-thin{    font-family:Archivo-ThinItalic,"Archivo-ThinItalic"             !important; text-rendering:optimizeLegibility !important;}
+.fnt-extraL{    font-family:Archivo-ExtraLight,"Archivo-ExtraLight"             !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-extraL{  font-family:Archivo-ExtraLightItalic,"Archivo-ExtraLightItalic" !important; text-rendering:optimizeLegibility !important;}
+.fnt-light{     font-family:Archivo-Light,"Archivo-Light"                       !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-light{   font-family:Archivo-LightItalic,"Archivo-LightItalic"           !important; text-rendering:optimizeLegibility !important;}
+.fnt-reg{       font-family:Archivo-Regular,"Archivo-Regular"                   !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-reg{     font-family:Archivo-Italic,"Archivo-Italic"                     !important; text-rendering:optimizeLegibility !important;}
+.fnt-med{       font-family:Archivo-Medium,"Archivo-Medium"                     !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-med{     font-family:Archivo-MediumItalic,"Archivo-MediumItalic"         !important; text-rendering:optimizeLegibility !important;}
+.fnt-semi{      font-family:Archivo-SemiBold,"Archivo-SemiBold"                 !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-semi{    font-family:Archivo-SemiBoldItalic,"Archivo-SemiBoldItalic"     !important; text-rendering:optimizeLegibility !important;}
+.fnt-bold{      font-family:Archivo-Bold,"Archivo-Bold"                         !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-bold{    font-family:Archivo-BoldItalic,"Archivo-BoldItalic"             !important; text-rendering:optimizeLegibility !important;}
+.fnt-extra{     font-family:Archivo-ExtraBold,"Archivo-ExtraBold"               !important; text-rendering:optimizeLegibility !important;}
+.fnt-i-extra{   font-family:Archivo-ExtraBoldItalic,"Archivo-ExtraBoldItalic"   !important; text-rendering:optimizeLegibility !important;}
+.fnt-black{     font-family:Archivo-Black,"Archivo-Black"                       !important; text-rendering:optimizeLegibility !important;}
 /* -- -- -- -- -- --  */
 /* -- -- FONT SIZE    */
 /* -- -- -- -- -- --  */
@@ -129,33 +129,6 @@
     /* margin-left:10%; */
     margin:auto;
     padding-bottom:1rem;
-}
-/* Changes the vote chip */
-#cvote {
-    font-family:"Archivo-Semibold";
-    color:#FADF33 !important;
-    border: 1px solid #353238 !important;
-}
-#cvote:hover{
-    border-color: #FADF33 !important;
-    border-width: 2px !important;
-    font-family: Archivo-Bold,"Archivo-Bold"  !important;
-}
-#cvote.btn:active{
-    background-color: #FADF33 !important;
-    color: #353238 !important;
-    font-family: Archivo-Bold,"Archivo-Bold"  !important;
-    border: 1px solid #353238 !important;
-}
-#cvote.btn:focus{
-    background-color: #FADF33 !important;
-    color: #353238 !important;
-    font-family: Archivo-Bold,"Archivo-Bold"  !important;
-    border: 1px solid #353238 !important;
-    box-shadow: none !important;
-}
-#cvote.btn:focus::after{
-    content: "d!";
 }
 
 /* Editors Pick Card */
@@ -271,17 +244,17 @@
     display:flex;
     align-items:stretch;
     justify-content:center;
-    max-height: 40px;
+    max-height: 50px;
 }
 #title>a {
     /* M */
     text-decoration:none !important;
     color:#353238;
     line-height:1; 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin:auto;
     background-color:#FADF33;
-    padding:0 0.5rem 0 0.5rem;
+    padding:0 0.25rem 0 0.25rem;
     letter-spacing:-0.1rem;
     vertical-align:middle;
 }
@@ -307,6 +280,10 @@
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 /* /* Small devices such as large phones (640px and up)* */
 @media only screen and (min-width: 40em) {
+        .btn.btn-action{
+            width:2rem;
+            height: 2rem;
+        }
         #col-left{
             max-width:60%;
         }
@@ -315,6 +292,9 @@
             margin:auto;
             text-align:center;
             padding-bottom:0rem;
+        }
+        .dropdown-toggle{
+            padding-top:7px !important;
         }
         #header-big{
             font-size: 2rem;
@@ -348,3 +328,4 @@
 
 /* Largest devices such as desktops (1280px and up) */
 /* @media only screen and (min-width: 80em) {...} */ 
+

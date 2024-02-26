@@ -14,6 +14,7 @@ class ContentItemAdmin(admin.ModelAdmin):
     list_display=('item_title','item_votecount','item_curated','item_source','item_datepublished','item_hidden')
     list_filter=['item_source','item_curated','item_hidden']
     actions = ['mark_as_curated','mark_as_uncurated','mark_as_hidden']
+    show_facets = admin.ShowFacets.ALWAYS
     # Methods
     def get_ordering(self, request):
         return ['-item_datepublished']
@@ -57,4 +58,4 @@ class ContactRequestAdmin(admin.ModelAdmin):
         queryset.update(contact_complete = True)
     mark_as_complete.short_description = "Complete"
 
-    
+## Logging View 

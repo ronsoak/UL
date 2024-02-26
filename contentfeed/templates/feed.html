@@ -52,7 +52,7 @@
             <div class="tile-content">
                 <div class="pb-1"><a href="{{i.item_url}}" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')" target="_blank">{{i.item_title}}</a></div>
                 <div>
-                    <button id="cvote" class="btn chip bg-dark mr-2" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')">Vote</button>
+                    <button id="id-{{i.item_id}}" class="btn chip bg-dark mr-2 text-primary fnt-semi" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')">Vote</button>
                     <span class="chip"><a class="tdn" href="/sites">{{i.item_source}}</a></span>
                     
                     <!-- Admin only buttons -->

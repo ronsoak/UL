@@ -15,6 +15,7 @@ Disallow: /sito/*
 Disallow: /site/*
 Disallow: */None
 Disallow: /humans.txt
+Disallow: */wlwmanifest.xml
 
 
 

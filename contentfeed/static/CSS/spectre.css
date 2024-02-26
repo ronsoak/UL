@@ -5,7 +5,7 @@
 /* Document ========================================================================== */
 html {
   /*font-family: "Archivo-Regular","Open Sans",sans-serif; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 3 */ 
+  /* -webkit-text-size-adjust: 100%; /* 3 */ 
   -ms-text-size-adjust: 100%; /* 3 */
 }
 
@@ -290,12 +290,10 @@ html {
 
 body {
   background: #fff;
-  /* color: #3b4351; */
   color:#20292C;
   font-family: "Archivo-Regular",Archivo-Regular,-apple-system, system-ui, BlinkMacSystemFont,"Open Sans", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: .9rem;
   overflow-x: hidden;
-  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -563,9 +561,9 @@ html:lang(ko),
   -moz-appearance: none;
   appearance: none;
   background: #fff;
-  border: .05rem solid #5755d9;
   border-radius: .1rem;
-  color: #5755d9;
+  border: 1px solid #353238;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: .8rem;
@@ -585,20 +583,20 @@ html:lang(ko),
 }
 
 .btn:focus {
-  box-shadow: 0 0 0 .1rem rgba(87, 85, 217, .2);
+  border: 1px solid #FADF33;
 }
 
 .btn:focus,
 .btn:hover {
   background: #f1f1fc;
-  border-color: #4b48d6;
+  border: 2px solid #FADF33;
   text-decoration: none;
 }
 
 .btn:active,
 .btn.active {
-  background: #4b48d6;
-  border-color: #3634d2;
+  background: #353238;
+  border-color: #FADF33;
   color: #fff;
   text-decoration: none;
 }
@@ -738,16 +736,14 @@ html:lang(ko),
 .btn.btn-action {
   padding-left: 0;
   padding-right: 0; 
-  width: 1.8rem;
+  aspect-ratio: 1/1;
 }
 
 .btn.btn-action.btn-sm {
   width: 1.4rem;
 }
 
-.btn.btn-action.btn-lg {
-  width: 2rem;
-}
+/* .btn.btn-action.btn-lg {width: 2rem;} */
 
 .btn.btn-clear {
   background: transparent;
@@ -2501,7 +2497,7 @@ summary.accordion-header::-webkit-details-marker {
   box-shadow: 0 .05rem .2rem rgba(48, 55, 66, .3);
   list-style: none;
   margin: 0;
-  min-width: 180px;
+  min-width: 150px;
   padding: .4rem;
   transform: translateY(.2rem);
   z-index: 300;

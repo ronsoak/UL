@@ -139,3 +139,9 @@ def Vote(self,item_id,session_id):
         new_vote = Votes(item_id=i,session_id=s)
         new_vote.save()
         return HttpResponse('Vote Successful')
+    
+def Error404(request):
+    return render(request, '404.html')
+
+def Error500(request):
+    return render(request, '500.html')
