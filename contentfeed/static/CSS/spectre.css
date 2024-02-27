@@ -4,9 +4,9 @@
 /** 1. Change the default font family in all browsers (opinionated). 2. Correct the line height in all browsers. 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
 /* Document ========================================================================== */
 html {
-  /*font-family: "Archivo-Regular","Open Sans",sans-serif; /* 1 */
-  /* -webkit-text-size-adjust: 100%; /* 3 */ 
-  -ms-text-size-adjust: 100%; /* 3 */
+    font-family: "Archivo-Regular",Archivo-Regular,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 /* Sections ========================================================================== */
@@ -291,7 +291,7 @@ html {
 body {
   background: #fff;
   color:#20292C;
-  font-family: "Archivo-Regular",Archivo-Regular,-apple-system, system-ui, BlinkMacSystemFont,"Open Sans", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Archivo-Regular",Archivo-Regular,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: .9rem;
   overflow-x: hidden;
 }
@@ -2940,8 +2940,6 @@ summary.accordion-header::-webkit-details-marker {
   border-bottom-color: #FADF33;
   color: #000100;
   font-family:"Archivo-Semibold";
-  /* background-color: #7120fe; */
-  /* border-radius: 2rem; */
 }
 
 .tab .tab-item.tab-action {
