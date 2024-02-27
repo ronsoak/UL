@@ -1,6 +1,12 @@
 @font-face {
+    font-family: Fallback;
+    src: local(system-ui), local(-apple-system), local(BlinkMacSystemFont),
+      local(Segoe UI), local(Roboto), local(Ubuntu), local(Helvetica),
+      local(Arial), local(sans-serif);
+  }
+@font-face {
     font-family: "Archivo-Thin";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-Thin.woff2") format("woff2"),
         url("../fonts/Archivo-Thin.woff") format("woff");
     font-weight: 100;
@@ -11,7 +17,7 @@
 
 @font-face {
     font-family: "Archivo-ThinItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-ThinItalic.woff2") format("woff2"),
         url("../fonts/Archivo-ThinItalic.woff") format("woff");
     font-weight: 100;
@@ -21,7 +27,7 @@
 
 @font-face {
     font-family: "Archivo-ExtraLight";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-ExtraLight.woff2") format("woff2"),
         url("../fonts/Archivo-ExtraLight.woff") format("woff");
     font-weight: 200;
@@ -31,7 +37,7 @@
 
 @font-face {
     font-family: "Archivo-ExtraLightItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-ExtraLightItalic.woff2") format("woff2"),
         url("../fonts/Archivo-ExtraLightItalic.woff") format("woff");
     font-weight: 200;
@@ -41,7 +47,7 @@
 
 @font-face {
     font-family: "Archivo-Light";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-Light.woff2") format("woff2"),
         url("../fonts/Archivo-Light.woff") format("woff");
     font-weight: 300;
@@ -51,7 +57,7 @@
 
 @font-face {
     font-family: "Archivo-LightItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-LightItalic.woff2") format("woff2"),
         url("../fonts/Archivo-LightItalic.woff") format("woff");
     font-weight: 300;
@@ -61,7 +67,7 @@
 
 @font-face {
     font-family: "Archivo-Regular";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-Regular.woff2") format("woff2"),
         url("../fonts/Archivo-Regular.woff") format("woff");
     font-weight: 400;
@@ -71,7 +77,7 @@
 
 @font-face {
     font-family: "Archivo-Italic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-Italic.woff2") format("woff2"),
         url("../fonts/Archivo-Italic.woff") format("woff");
     font-weight: 400;
@@ -81,7 +87,7 @@
 
 @font-face {
     font-family: "Archivo-Medium";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-Medium.woff2") format("woff2"),
         url("../fonts/Archivo-Medium.woff") format("woff");
     font-weight: 500;
@@ -91,7 +97,7 @@
 
 @font-face {
     font-family: "Archivo-MediumItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-MediumItalic.woff2") format("woff2"),
         url("../fonts/Archivo-MediumItalic.woff") format("woff");
     font-weight: 500;
@@ -101,7 +107,7 @@
 
 @font-face {
     font-family: "Archivo-SemiBold";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"),
+    src:
         url("../fonts/Archivo-SemiBold.woff2") format("woff2"),
         url("../fonts/Archivo-SemiBold.woff") format("woff");
     font-weight: 600;
@@ -111,7 +117,7 @@
 
 @font-face {
     font-family: "Archivo-SemiBoldItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"), 
+    src: 
         url("../fonts/Archivo-SemiBoldItalic.woff2") format("woff2"),
         url("../fonts/Archivo-SemiBoldItalic.woff") format("woff");
     font-weight: 600;
@@ -121,7 +127,7 @@
 
 @font-face {
     font-family: "Archivo-Bold";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"), 
+    src: 
         url("../fonts/Archivo-Bold.woff2") format("woff2"),
         url("../fonts/Archivo-Bold.woff") format("woff");
     font-weight: 700;
@@ -131,7 +137,7 @@
 
 @font-face {
     font-family: "Archivo-BoldItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"), 
+    src: 
         url("../fonts/Archivo-BoldItalic.woff2") format("woff2"),
         url("../fonts/Archivo-BoldItalic.woff") format("woff");
     font-weight: 700;
@@ -141,7 +147,7 @@
 
 @font-face {
     font-family: "Archivo-ExtraBold";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"), 
+    src: 
         url("../fonts/Archivo-ExtraBold.woff2") format("woff2"),
         url("../fonts/Archivo-ExtraBold.woff") format("woff");
     font-weight: 800;
@@ -151,7 +157,7 @@
 
 @font-face {
     font-family: "Archivo-ExtraBoldItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"), 
+    src: 
         url("../fonts/Archivo-ExtraBoldItalic.woff2") format("woff2"),
         url("../fonts/Archivo-ExtraBoldItalic.woff") format("woff");
     font-weight: 800;
@@ -161,7 +167,7 @@
 
 @font-face {
     font-family: "Archivo-Black";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"), 
+    src: 
         url("../fonts/Archivo-Black.woff2") format("woff2"),
         url("../fonts/Archivo-Black.woff") format("woff");
     font-weight: 900;
@@ -171,7 +177,7 @@
 
 @font-face {
     font-family: "Archivo-BlackItalic";
-    src: local(system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"), 
+    src: 
         url("../fonts/Archivo-BlackItalic.woff2") format("woff2"),
         url("../fonts/Archivo-BlackItalic.woff") format("woff");
     font-weight: 900;

@@ -4,7 +4,7 @@
 /** 1. Change the default font family in all browsers (opinionated). 2. Correct the line height in all browsers. 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
 /* Document ========================================================================== */
 html {
-    font-family: "Archivo-Regular",Archivo-Regular,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Archivo-Regular",Archivo-Regular,Fallback;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -291,7 +291,7 @@ html {
 body {
   background: #fff;
   color:#20292C;
-  font-family: "Archivo-Regular",Archivo-Regular,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Archivo-Regular",Archivo-Regular,Fallback;
   font-size: .9rem;
   overflow-x: hidden;
 }
@@ -2932,14 +2932,14 @@ summary.accordion-header::-webkit-details-marker {
 .tab .tab-item a:focus,
 .tab .tab-item a:hover {
   color: #FADF33;
-  font-family:"Archivo-Semibold";
+  font-family:"Archivo-Semibold",Fallback;;
 }
 
 .tab .tab-item.active a,
 .tab .tab-item a.active {
   border-bottom-color: #FADF33;
   color: #000100;
-  font-family:"Archivo-Semibold";
+  font-family:"Archivo-Semibold",Fallback;;
 }
 
 .tab .tab-item.tab-action {
@@ -2986,7 +2986,7 @@ summary.accordion-header::-webkit-details-marker {
 .tile .tile-action {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  font-family: "Archivo-Semibold";
+  font-family: "Archivo-Semibold",Fallback;;
 }
 
 .tile .tile-content {
