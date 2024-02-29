@@ -1,5 +1,7 @@
 from django.contrib import admin
 from contentfeed.models import SourceType, Votes, Publications, ContentItem, PubRequest, ContactRequest
+from django.db import models          # added
+from django.forms import TextInput, Textarea    # added
 
 # Register your models here.
 admin.site.register(SourceType)
@@ -37,6 +39,7 @@ class PublicationRequestAdmin(admin.ModelAdmin):
     list_display=('pubreq_name','pubreq_url','pubreq_date','pubreq_complete')
     list_filter=['pubreq_complete']
     actions=['mark_as_complete']
+ 
     # Methods
     def get_ordering(self, request):
         return ['pubreq_complete','-pubreq_date']
@@ -50,6 +53,7 @@ class ContactRequestAdmin(admin.ModelAdmin):
     list_display=('contact_name','contact_email','contact_date','contact_complete')
     list_filter=['contact_complete']
     actions=['mark_as_complete']
+    
     # Methods
     def get_ordering(self, request):
         return ['contact_complete','-contact_date']

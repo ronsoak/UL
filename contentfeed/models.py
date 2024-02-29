@@ -1,3 +1,4 @@
+import pkgutil
 from tabnanny import verbose
 import uuid                         # needed for keys
 from django.db import models        # standard
@@ -27,7 +28,7 @@ class Publications(models.Model):
     pub_url = models.URLField(blank=False,null=False, help_text="URL of the publication, i.e the top level domain", verbose_name="Publication URL")#convert to ip address
     pub_feedurl = models.URLField(blank=False,null=False,help_text="URL of the feed, i.e rss", verbose_name="Publication Feed URL")
     pub_feedtype = models.ForeignKey(SourceType,on_delete=models.RESTRICT,null=True,help_text="The type of feed it is for automation", verbose_name="Feed Type")
-    pub_description = models.CharField(max_length=2000, blank=False,null=False, help_text="Description of the publication, used in the sources page", verbose_name="Publication Description")#change to bigger text? 
+    pub_description = models.TextField(max_length=2000, blank=False,null=False, help_text="Description of the publication, used in the sources page", verbose_name="Publication Description")#change to bigger text? 
     pub_hidden = models.BooleanField(default=False, help_text="A flag to determine whether this item should be hidden from the site", verbose_name="Publication Hidden")
     # Metadata
     class Meta:
@@ -63,6 +64,9 @@ class ContentItem(models.Model):
     def __str__(self):
         return self.item_title
     
+    def pub_guid(self):
+        return Publications.objects.get(pub_id = self.item_source.pk).pub_id
+    
 # Content Votes
 class Votes(models.Model):
     # Fields 
@@ -88,7 +92,7 @@ class PubRequest(models.Model):
     pubreq_feed = models.CharField(blank=False,max_length=2000,help_text="URL of the websites Feed, i.e RSS", verbose_name="Source Feed URL")
     pubreq_name = models.CharField(blank=False,max_length=256,help_text="Name of the person making contact", verbose_name="Contact Name")
     pubreq_email = models.EmailField(blank=False,help_text="The email of the person making contact", verbose_name="Email Address")
-    pubreq_notes = models.CharField(blank=True,null=True,max_length=2000,help_text="Notes about the request", verbose_name="Additional Information")
+    pubreq_notes = models.TextField(blank=True,null=True,max_length=2000,help_text="Notes about the request", verbose_name="Additional Information")
     pubreq_complete = models.BooleanField(default=False, help_text="A flag to determine whether this request has been handled", verbose_name="Source Request Status")
     pubreq_date = models.DateField(default=timezone.now,help_text="Date request was submitted",verbose_name="Date Submitted")
     # Metadata
@@ -106,7 +110,7 @@ class ContactRequest(models.Model):
     contact_id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this new contact request", verbose_name="Contact Id" )
     contact_name = models.CharField(blank=False,max_length=256,help_text="Name of the person making contact", verbose_name="Contact Name")
     contact_email = models.EmailField(blank=False,help_text="The email of the person making contact", verbose_name="Contact Email")
-    contact_notes = models.CharField(blank=False,max_length=2000,help_text="Notes about the contact request", verbose_name="Additional Information")
+    contact_notes = models.TextField(blank=False,max_length=2000,help_text="Notes about the contact request", verbose_name="Additional Information")
     contact_complete = models.BooleanField(default=False, help_text="A flag to determine whether this request has been handled", verbose_name="Contact Request Status")
     contact_date = models.DateField(default=timezone.now,help_text="Date request was submitted",verbose_name="Date Submitted")
     # Metadata

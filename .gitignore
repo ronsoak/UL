@@ -6,6 +6,7 @@ blogsite/__pycache__
 contentfeed/__pycache__
 contentfeed/migrations
 .vscode
+.DS_STORE
 
 # Python Files
 __init__.py 

@@ -53,9 +53,8 @@
                 <div class="pb-1"><a href="{{i.item_url}}" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')" target="_blank">{{i.item_title}}</a></div>
                 <div>
                     <button id="id-{{i.item_id}}" class="btn chip bg-dark mr-2 text-primary fnt-semi" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')">Vote</button>
-                    <span class="chip"><a class="tdn" href="/sites">{{i.item_source}}</a></span>
-                    
-                    <!-- Admin only buttons -->
+                    <span class="chip"><a class="tdn" href="/publication/{{i.pub_guid}}">{{i.item_source}}</a></span>
+                <!-- Admin only buttons -->
                 {% if user.is_authenticated %}
                 <span class="chip bg-orange"><a class="tdn" href="feature/{{i.item_id}}">Feature</a></span>
                 <span class="chip bg-orange"><a class="tdn" href="hide/{{i.item_id}}">Hide</a></span>
@@ -71,14 +70,14 @@
         <div class="column col-6 step-links">
             {% if page_obj.has_previous %}
             <div id="header-medium">
-                <span class="bg-yellow px-1r fnt-med"><a class="tdn" href="?page={{ page_obj.previous_page_number }}">PREVIOUS</a></span>
+                <span class="bg-yellow px-1r fnt-med hvr_out"><a class="tdn" href="?page={{ page_obj.previous_page_number }}">BACK</a></span>
               </div>
             {% endif %}
         </div>
         <div class="column col-6 step-links text-right">
             {% if page_obj.has_next %}
             <div id="header-medium">
-                <span class="bg-yellow px-1r fnt-med"><a class="tdn" href="?page={{ page_obj.next_page_number }}">NEXT</a></span>
+                <span class="bg-yellow px-1r fnt-med hvr_out"><a class="tdn" href="?page={{ page_obj.next_page_number }}">NEXT</a></span>
               </div>
             {% endif %}
         </div>

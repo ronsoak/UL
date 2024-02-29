@@ -311,8 +311,7 @@ a:focus,
 a:hover,
 a:active,
 a.active {
-  /* color: #302ecd; */
-  color: #ef233c;
+  color: #353238;
   text-decoration: underline;
 }
 
@@ -2089,7 +2088,8 @@ video.video-responsive::before {
 
 .accordion input:checked ~ .accordion-body,
 .accordion[open] .accordion-body {
-  max-height: 50rem;
+  max-height: 100rem;
+  overflow-y:scroll;
 }
 
 .accordion .accordion-header {

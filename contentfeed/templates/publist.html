@@ -1,0 +1,61 @@
+{% extends "standard.html" %}
+{% block content %}
+<!-- Heading & Description -->
+<div class="container grid-lg p-relative">
+    {% for p in pub_detail %}
+    <div id="header-big">
+        <span class="bg-yellow fnt-extra px-1r">{{p.pub_name}}</span>
+    </div>
+    <span>
+        {{p.pub_description}}
+        Click <a href="{{p.pub_url}}">here</a> to go to the publications website.
+    </span>
+    {% empty %}
+    {% endfor %}
+<!-- Dropdown -->
+<div id="pub-drop">
+    <a href="#" onclick="showPublications()" class="btn bg-dark text-primary" tabindex="0">Change Publication</a>
+</div>
+<!-- Modal -->
+<div class="modal" id="pub-modal">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+            <div class="modal-header">
+                <a href="#close" onclick="showPublications()" class="btn btn-clear float-right" aria-label="Close"></a>
+                <div class="modal-title h2 mt-1r">Select a Publication</div>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    {% for l in pub_list %}
+                    <li><a href="/publication/{{l.pub_id}}">{{l.pub_name}}</a></li>
+                    {% empty %}
+                    {% endfor %}
+                </ul>
+            </div>
+    </div>
+</div>
+
+</div>
+<!-- Results -->
+<div class="container grid-lg mb-1r">
+<div id="header-medium">
+    <span class="bg-yellow fnt-extra px-1r">Articles</span>
+</div>
+    <span>See all articles by this publication, ordered by their publication date in descending order. Older articles may not appear in this list.</span>
+</div>
+<div class="container grid-lg">
+    {% for i in pub_items %}
+    <div class="tile mt-2">
+        <div class="tile-icon"><i class="icon icon-minus"></i></div>
+        <div class="tile-content">
+          <div class="pb-1">
+            <a href="{{i.item_url}}" onclick="upvote('{{i.item_id}}','{{session_id}}','{{ csrf_token }}')" target="_blank">{{i.item_title}}</a>
+          </div>
+          <div><span class="chip">{{i.item_datepublished}}</span></div>
+        </div>
+      </div>
+    {% empty %}
+    <p>No Results</p>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -10,6 +10,7 @@ urlpatterns = [
     path('about',views.about,name='about'),
     path('sites',views.sites, name='sites'),
     path('search',views.search, name='search'),
+    path('publication/<uuid:pubid>',views.PublicationLookup, name='publication_lookup'),
     # Error Pages
     path('404',views.Error404, name='404page'),
     path('500',views.Error500, name='500page'),

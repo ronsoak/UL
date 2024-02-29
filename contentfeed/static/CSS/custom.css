@@ -86,6 +86,7 @@
 /* -- -- -- -- -- --  */
 /* -- -- Sizing       */
 /* -- -- -- -- -- --  */
+.w40{   width:40px              !important;}
 .w60{   width:60px              !important;}
 .h250{  min-height: 250px       !important;}
 /* -- -- -- -- -- --  */
@@ -94,6 +95,7 @@
 .text-dark{ color:#353238     !important;}
 .bg-orange{ background-color: #FF9D45 !important;}
 .tdn{ text-decoration: none     !important;}
+.tdu{ text-decoration-line: underline   !important;}
 /* -- -- -- -- -- --  */
 /* -- -- Borders      */
 /* -- -- -- -- -- --  */
@@ -164,13 +166,15 @@
 #header-big{
     margin:1.5rem 0.5rem 1.5rem 0.6rem;
     transform:skew(-15deg);
-    font-size: 1rem;
-
+    font-size: 1.5rem;
 }
 #header-medium{
     margin:1.5rem 0.5rem;
     transform:skew(-15deg);
     font-size: 0.85rem;
+}
+.hvr_out:hover{
+    border: 2px solid #353238 !important;
 }
 /* About Image */
 #img-about{
@@ -178,6 +182,12 @@
     width:300px;
     vertical-align:middle;
     object-fit:cover;
+}
+#pub-drop{
+    position: absolute;
+    top: 10px;
+    right: 1px;
+    margin-right: 1rem;
 }
 /* Box used for disclaimer numbering and list points */
 #small-box{
@@ -319,13 +329,3 @@
             width:50%;
         }
 }
-
-/* Medium devices such as tablets (768px and up) */
-/* @media only screen and (min-width: 48em) {...} */
-
-/* Large devices such as laptops (1024px and up) */
-/* @media only screen and (min-width: 64em) {...} */
-
-/* Largest devices such as desktops (1280px and up) */
-/* @media only screen and (min-width: 80em) {...} */ 
-

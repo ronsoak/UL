@@ -43,13 +43,13 @@ def ContentFeed(request,t_view):
         request.session.create()
     session_id = request.session.session_key
     if t == 1:      # 1 = Newset
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('-item_datepublished')[:qlimit]
+        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).select_related("item_source").order_by('-item_datecreated')[:qlimit]
     elif t == 2:    # 2 = Random
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('?')[:qlimit]
+        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).select_related("item_source").order_by('?')[:qlimit]
     elif t == 3:    # 3 = Oldest
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('item_datepublished')[:qlimit]
+        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).select_related("item_source").order_by('item_datepublished')[:qlimit]
     else:           # 0 = Trending (Default)
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).order_by('-item_votecount','-item_datepublished')[:qlimit]
+        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).select_related("item_source").order_by('-item_votecount','-item_datepublished')[:qlimit]
     
     paginator = Paginator(content_query,plimit)
     curated = ContentItem.objects.filter(item_curated=True,item_hidden=False).order_by('-item_datepublished')[:3] #Curated top 3
@@ -70,7 +70,19 @@ def ContentFeed(request,t_view):
     }
     return render(request,'feed.html',context)
 
-# Publications Page
+# Publication Lookup
+def PublicationLookup(request,pubid):
+    pub_query = ContentItem.objects.filter(item_source=pubid,item_hidden=False).order_by('-item_datepublished')[:1000]
+    pub_detail = Publications.objects.filter(pub_id=pubid,pub_hidden=False)
+    pub_list = Publications.objects.filter(pub_hidden=False)
+    context = {
+        "pub_items": pub_query,
+        "pub_detail": pub_detail,
+        "pub_list" : pub_list
+    }
+    return render(request,'publist.html',context)
+
+# Sites Page
 def sites(request):
     # Publication Query
     pub_query = Publications.objects.filter(pub_hidden=False)
