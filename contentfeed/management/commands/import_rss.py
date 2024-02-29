@@ -28,8 +28,12 @@ class Command(BaseCommand):
                     r_check = 0 
                     raise CommandError("Bad Bozo Flag: "+pub_name+"["+str(r_content.bozo_exception)+"]")
                 for r in r_content.entries:
-                    pub_date = datetime(*r.published_parsed[:6],tzinfo=ZoneInfo('Pacific/Auckland'))
-                    pub_date = datetime.date(pub_date)
+                    try:
+                        pub_date = datetime(*r.published_parsed[:6],tzinfo=ZoneInfo('Pacific/Auckland'))
+                        pub_date = datetime.date(pub_date)
+                    except:
+                        pub_date = datetime.today()
+                        pub_date = datetime.date(pub_date)
                     #self.stdout.write(r.title + ',' + r.link + ',' + str(pub_date) + ',' +pub_name + ': ', ending="")
                     management.call_command("write_content",r.title,r.link,pub_date,pub_id)
                     r_check = 0  
