@@ -175,7 +175,6 @@
     transform:skew(-15deg);
     font-size: 0.85rem;
     overflow-wrap: break-word;
-    max-width: 50%;
 }
 .hvr_out:hover{
     border: 2px solid #353238 !important;
