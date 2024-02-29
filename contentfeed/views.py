@@ -74,7 +74,7 @@ def ContentFeed(request,t_view):
 def PublicationLookup(request,pubid):
     pub_query = ContentItem.objects.filter(item_source=pubid,item_hidden=False).order_by('-item_datepublished')[:1000]
     pub_detail = Publications.objects.filter(pub_id=pubid,pub_hidden=False)
-    pub_list = Publications.objects.filter(pub_hidden=False)
+    pub_list = Publications.objects.filter(pub_hidden=False).order_by('pub_name')
     context = {
         "pub_items": pub_query,
         "pub_detail": pub_detail,
@@ -85,7 +85,7 @@ def PublicationLookup(request,pubid):
 # Sites Page
 def sites(request):
     # Publication Query
-    pub_query = Publications.objects.filter(pub_hidden=False)
+    pub_query = Publications.objects.filter(pub_hidden=False).order_by('pub_name')
     # User Form
     sform = NewSourceForm(request.POST or None )
     f_valid = 0
