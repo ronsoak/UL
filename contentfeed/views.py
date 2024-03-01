@@ -43,7 +43,7 @@ def ContentFeed(request,t_view):
         request.session.create()
     session_id = request.session.session_key
     if t == 1:      # 1 = Newset
-        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).select_related("item_source").order_by('-item_datecreated')[:qlimit]
+        content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).select_related("item_source").order_by('-item_datepublished')[:qlimit]
     elif t == 2:    # 2 = Random
         content_query = ContentItem.objects.filter(item_datepublished__range=[dateend,datestart],item_hidden=False).select_related("item_source").order_by('?')[:qlimit]
     elif t == 3:    # 3 = Oldest
@@ -54,6 +54,7 @@ def ContentFeed(request,t_view):
     paginator = Paginator(content_query,plimit)
     curated = ContentItem.objects.filter(item_curated=True,item_hidden=False).order_by('-item_datepublished')[:3] #Curated top 3
     page_obj = paginator.get_page(page)
+
     try:
         content = paginator.page(page)
     except PageNotAnInteger:
